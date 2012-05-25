@@ -1,0 +1,15 @@
+body {
+background-color: #ffffff;
+}
+
+body,td {
+font-family: Verdana;
+font-size: 12px;
+color: #000000;
+}
+
+.printheading {
+font-size: 18px;
+font-weight: bold;
+}
+

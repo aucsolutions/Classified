@@ -1,0 +1,286 @@
+body {
+background-color: #efefef;
+margin:0px;
+}
+
+body,td,select,input,textarea {
+font-family: Tahoma;
+font-size: 11px;
+color: #000000;
+}
+
+form {
+margin: 0px;
+}
+
+.navbutton {
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 12px;
+padding-bottom: 13px;
+height: 38px;
+color: #757575;
+font-weight: bold;
+font-size: 9px;
+font-family: Verdana;
+text-align: center;
+border-top: 1px solid #ffffff;
+border-right: 1px solid #ffffff;
+cursor: pointer;
+cursor: hand;
+text-transform: uppercase;
+}
+
+.navbuttonover {
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 12px;
+padding-bottom: 13px;
+height: 38px;
+color: #355E88;
+font-weight: bold;
+font-size: 9px;
+font-family: Verdana;
+text-align: center;
+border-top: 1px solid #ffffff;
+border-right: 1px solid #ffffff;
+cursor: pointer;
+cursor: hand;
+text-transform: uppercase;
+background-color: #9DC3EA;
+}
+
+.button {
+color:#000000;
+cursor: pointer;
+cursor: hand;
+height:20px;
+font-weight:bold;
+background-color:#ffffff;
+border:1px solid #8FBCE9;
+filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#ffffff',EndColorStr='#e5e5e5');}
+}
+
+#adminhometable td {
+font-size:9px;
+}
+
+#dropmenudiv{
+position:absolute;
+border:1px solid #888888;
+border-bottom-width: 0;
+font-family: Verdana;
+font-size: 10px;
+line-height:15px;
+z-index:100;
+}
+#dropmenudiv a{
+width: 100%;
+display: block;
+text-indent: 3px;
+border-bottom: 1px solid #888888;
+padding: 1px 0;
+text-decoration: none;
+font-weight: bold;
+color: #000000;
+}
+#dropmenudiv a:hover{
+background-color: #cccccc;
+}
+
+a {
+color: #000099;
+text-decoration: underline;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+td#clientmenuitem {
+height: 18px;
+padding-left:5px;
+padding-right:5px;
+font-weight: bold;
+background-color: #efefef;
+}
+
+td#clientmenuitem a {
+color:#000000;
+}
+
+td#clientmenuitemon {
+height: 18px;
+padding-left:5px;
+padding-right:5px;
+font-weight: bold;
+background-color: #888888;
+}
+
+td#clientmenuitemon a {
+color:#FFFFFF;
+}
+
+.menuLink {
+font-size: 12px;
+font-weight: bold;
+color: #545454;
+text-decoration: none;
+}
+
+a.menuLink:hover {
+text-decoration: underline;
+}
+
+.calendar {
+background-color: #f2f2f2;
+height: 90px;
+}
+.calendarHeader { 
+font-weight: bold; 
+color: #000066; 
+background-color: #efefef; 
+}
+.calendarToday { 
+background-color: #f8f8f8;
+}
+.calendarBlank { 
+background-color: #FFFFFF;
+}
+.descriptionlink {
+color: #000000;
+cursor: default;
+}
+
+h1 {
+color: #297CCF;
+font-size: 14px;
+font-weight: bold;
+}
+
+.pageheaderrow {
+padding-left:14px;
+border-top: dashed 1px #CCCCCC;
+border-bottom: dashed 1px #CCCCCC;
+height: 26px;
+background-color: #EEEEEE;
+color: #297CCF;
+font-size: 14px;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+.pagecontentbox {
+background-color: #FFFFFF;
+padding:14px;
+}
+
+.clientsbox {
+background-color: #FFFFFF;
+}
+
+.clientstopbox {
+background-color: #EEEEEE;
+}
+
+.navbar {
+background-color: #EFF2F9;
+padding:15px;
+font-size: 10px;
+}
+
+.navheading {
+text-align: center;
+color: #ffffff;
+font-family: Tahoma;
+font-size: 11px;
+font-weight: bold;
+}
+
+.navbaroff {
+background-color: #ffffff;
+text-align: center;
+font-family: Tahoma;
+font-size: 10px;
+}
+
+.navbarover {
+background-color: #EFF2F9;
+text-align: center;
+font-family: Tahoma;
+font-size: 10px;
+font-weight: bold;
+cursor: pointer;
+cursor: hand;
+}
+
+#infobox { 
+background-image: url('images/warning.gif'); 
+background-repeat: no-repeat; 
+background-position: 5px; 
+margin: 10px 5px 10px 5px;
+padding: 5px 5px 5px 45px; 
+background-color: #FCF9D2; 
+border: 1px solid #F9D43E; 
+}
+
+.tab {
+padding-top:2px;
+padding-bottom:2px;
+padding-left:10px;
+padding-right:10px;
+background-color:#efefef;
+border:1px solid #cccccc;
+cursor: pointer;
+cursor: hand;
+}
+
+.tab a {
+text-decoration: none;
+color: #000000;
+}
+
+.tabselected {
+padding-top:2px;
+padding-bottom:2px;
+padding-left:10px;
+padding-right:10px;
+background-color:#ffffff;
+border-top:1px solid #cccccc;
+border-left:1px solid #cccccc;
+border-right:1px solid #cccccc;
+border-bottom:0px;
+font-weight: bold;
+cursor: pointer;
+cursor: hand;
+}
+
+.tabbox {
+padding:10px;
+border-left:1px solid #cccccc;
+border-right:1px solid #cccccc;
+border-bottom:1px solid #cccccc;
+}
+
+.tabspacer {
+border-bottom:1px solid #cccccc;
+}
+
+.fieldarea {
+background-color: #EFF2F9;
+height: 26px;
+}
+
+.fieldareasmall {
+background-color: #EFF2F9;
+}
+
+.errorbox {
+	border: 1px dashed #cc0000;
+	font-weight: bold;
+	background-color: #FBEEEB;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	color: #cc0000;
+}

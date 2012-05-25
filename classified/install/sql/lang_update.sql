@@ -1,0 +1,1 @@
+insert into SiteManager( SiteVariable, SiteValue ) values( 'DefaultLanguage', 'english.php' );

@@ -4,6 +4,12 @@
 	
 	$mainCategory = $data->select ( "Category" , "*" , array ( "HeadCategoryID" => NULL ) , 0 , 100 , " OrderNumber asc" ) ;
 	
+
+	
+	
 	include ( "theme/".$app_init_data["CurrentSkin"]."/home.php" ) ;
+	
+	
+	
 
 ?>

@@ -40,6 +40,7 @@
 									?>
 											
 												<?php
+												//echo "<h1>"."SWAPNESH SINHA"."</h1>"; Adding to all category list
 													if ( $i == 0 || $i == 3 || $i == 6 )
 														echo "<div style='vertical-align:top; margin-left:10px; margin-top:10px; width:270px; height:auto; float:left;'>" ;
 													$temp_src = base_url."media/cls_cat_".$cat["CategoryID"]."_5520.jpg" ;

@@ -19,7 +19,7 @@
 													"str_browse_ads" => "Browse Ads" ,
 													"str_post_ad" => "Post Ad" ,
 													"str_my_account" => "My Account" ,
-													"str_forget_pass" => "Forget Password" ,
+													"str_forget_pass" => "Forgot Password" ,
 													"str_dont_have_account_1" => "Don't have an account? Why not" ,
 													"str_dont_have_account_2" => "now? It takes only 30 seconds." ,
 													"str_password_match_alert" => "Your both passwords do not match Or Empty." ,
@@ -89,7 +89,7 @@
 						// Footer links and text used in application STARTS HERE
 						"lang_footer" => array (
 													"str_home_link" => "Home" ,
-													"str_copy_right" => "Copyright &copy;" ,
+													"str_copy_right" => "Copyright &copy; OZthink" ,
 												) ,
 						// Footer links and text used in application END HERE
 						

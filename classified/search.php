@@ -38,6 +38,11 @@
 
 	}
 	
+	//echo base_url;   http://swapnesh/classified/
+	//echo $qstr; c-BrowseClassified/q:samsung|p:0|gal:0|typ:|
+	//die;
+	
+	
 	header ( "location:".base_url."$qstr/" ) ;
 	exit ( ) ;
 

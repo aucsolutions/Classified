@@ -136,6 +136,29 @@
 						</a>
 					</li>
 					
+					<!--START BLOCK CODE ADDED BY SWAPNESH ON 17-05-2012
+					
+					<li>
+					
+					<img src="images/icons/page_add.png" border="0" alt="Base">
+					<a href="c_footerleft.php">
+					
+					Footer Left Content
+					</a>
+				
+					</li>
+					<li>
+					
+					<img src="images/icons/page_add.png" border="0" alt="Base">
+					<a href="c_footerright.php">
+					
+					Footer Right Content
+					</a>
+				
+					</li>
+					
+					-BLOCK CODE ENDS HERE--> 
+					
 				</ul>
 				</div>
 				<?php

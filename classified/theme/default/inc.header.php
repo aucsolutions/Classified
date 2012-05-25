@@ -212,21 +212,22 @@
 																		</div></td>
 																	<td class="ww_table"><span class="keySpan">
 																		<input name="Keyword" value="<?php echo $exp_send["q"] ?>" class="keyword" autocomplete="off" type="text">
-																		</span></td>
+																		</span>
+																	</td>
 																	<td class="ww_table" style="padding-left: 10px;">
-																	<div kjmenu="searchCat" id="searchCat" class="kjmenu_main_wrap" onmouseover="show_drop_down ( 'ul_cat', this ) ;" onmouseout="hide_drop_down('ul_cat');">
-																			<div id="searchCat_name" class="kjmenu_main_text">
-																				<?php echo $lang["lang_header"]["search_form"]["str_all_ads"] ?>
-																			</div>
-																			<?php
-																		if ( ! empty ( $mainCategory ) )
-																		{
-																			echo "<ul id='ul_cat' >" ;
-																			foreach ( $mainCategory as $cat )
-																				echo "<li onclick='select_dropdown_category ( ".$cat["CategoryID"]." , this );'><a href='#'>".$cat["CategoryName"]."</a></li>" ;
-																			echo "</ul>" ;
-																		}
-																	?>
+<div kjmenu="searchCat" id="searchCat" class="kjmenu_main_wrap" onmouseover="show_drop_down ( 'ul_cat', this ) ;" onmouseout="hide_drop_down('ul_cat');">
+<div id="searchCat_name" class="kjmenu_main_text">
+<?php echo $lang["lang_header"]["search_form"]["str_all_ads"] ?>
+</div>
+<?php
+if ( ! empty ( $mainCategory ) )
+		{
+			echo "<ul id='ul_cat' >" ;
+			foreach ( $mainCategory as $cat )
+				echo "<li onclick='select_dropdown_category ( ".$cat["CategoryID"]." , this );'><a href='#'>".$cat["CategoryName"]."</a></li>" ;
+			echo "</ul>" ;
+		}
+?>
 																			<span >
 																			<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/browseAds_arrow.gif" style="" border="0">
 																			</span>
@@ -289,7 +290,7 @@
 											<tr>
 												<td height="49">&nbsp;</td>
 												<td width="39%"><p>
-														<a href="#" onclick="$('#div_Login').hide(); showScreen ( 'div_Forget_pass' ) ;"><?php echo $lang["lang_header"]["str_forget_pass"] ?>?</a>
+						<a href="#" onclick="$('#div_Login').hide(); showScreen ( 'div_Forget_pass' ) ;"><?php echo $lang["lang_header"]["str_forget_pass"] ?>?</a>
 													</p></td>
 												<td width="42%"><input id="user_submit" name="commit" value="<?php echo $lang["lang_header"]["login_form"]["str_post_button"] ?>" type="submit" class="inputbtn" /></td>
 											</tr>
@@ -406,31 +407,31 @@
 										</div>
 										<table width="100%" border="0" cellspacing="0" cellpadding="0">
 											<tr>
-												<td width="30%" height="35"><label for="user_username"><?php echo $lang["lang_header"]["register_form"]["str_your_name"] ?></label></td>
+												<td width="30%" height="30"><label for="user_username"><?php echo $lang["lang_header"]["register_form"]["str_your_name"] ?></label></td>
 												<td><input name="Full_Setting_Name" type="text" id="txtFullName" size="30" gtbfieldid="116" sch_req="1" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_your_name"] ?>" /></td>
 											</tr>
 											<tr>
-												<td height="35"><label for="user_password"><?php echo $lang["lang_header"]["register_form"]["str_your_email"] ?></label></td>
+												<td height="30"><label for="user_password"><?php echo $lang["lang_header"]["register_form"]["str_your_email"] ?></label></td>
 												<td><input name="Email_Setting_Address" type="text" id="txtEmailAddress" size="30" gtbfieldid="117" sch_req="1" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_your_email"] ?>" /></td>
 											</tr>
 											<tr>
-												<td width="30%" height="35"><label for="user_username"><?php echo $lang["lang_header"]["register_form"]["str_your_password"] ?></label></td>
+												<td width="30%" height="30"><label for="user_username"><?php echo $lang["lang_header"]["register_form"]["str_your_password"] ?></label></td>
 												<td><input name="Password_Setting_" type="password" id="txtPassword" size="30" sch_req="1" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_your_password"] ?>" /></td>
 											</tr>
 											<tr>
-												<td height="35"><label for="user_password"><?php echo $lang["lang_header"]["register_form"]["str_confirm_password"] ?></label></td>
+												<td height="30"><label for="user_password"><?php echo $lang["lang_header"]["register_form"]["str_confirm_password"] ?></label></td>
 												<td><input name="ConfirmPassword" type="password" id="txtConfirmPassword" size="30" sch_req="1" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_confirm_password"] ?>" /></td>
 											</tr>
 											<tr>
-												<td width="30%" height="35"><label for="user_username"><?php echo $lang["lang_header"]["register_form"]["str_your_address"] ?></label></td>
+												<td width="30%" height="30"><label for="user_username"><?php echo $lang["lang_header"]["register_form"]["str_your_address"] ?></label></td>
 												<td><input name="Address_Setting_" type="text" id="txtAddress" size="30" gtbfieldid="118" sch_req="1" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_your_address"] ?>" /></td>
 											</tr>
 											<tr>
-												<td height="35"><label for="Address_Setting_"><?php echo $lang["lang_header"]["register_form"]["str_your_city"] ?></label></td>
+												<td height="30"><label for="Address_Setting_"><?php echo $lang["lang_header"]["register_form"]["str_your_city"] ?></label></td>
 												<td><input name="City_Setting_" type="text" id="Address_Setting_" size="30" gtbfieldid="118" sch_req="1" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_your_city"] ?>" /></td>
 											</tr>
 											<tr>
-												<td width="30%" height="35"><label for="Address_Setting_2"><?php echo $lang["lang_header"]["register_form"]["str_your_zip"] ?></label></td>
+												<td width="30%" height="30"><label for="Address_Setting_2"><?php echo $lang["lang_header"]["register_form"]["str_your_zip"] ?></label></td>
 												<td><input name="Zip_Setting_" type="text" id="Address_Setting_2" size="30" gtbfieldid="118" sch_req="1" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_your_zip"] ?>" /></td>
 											</tr>
 											<?php
@@ -439,7 +440,7 @@
 												{
 											?>
 											<tr>
-												<td width="30%" height="35"><label for="address_country"><?php echo $lang["lang_header"]["register_form"]["str_your_country"] ?></label></td>
+												<td width="30%" height="30"><label for="address_country"><?php echo $lang["lang_header"]["register_form"]["str_your_country"] ?></label></td>
 												<td>
 													<select name="Country_Setting_" sch_req="1" id="address_country" sch_msg="<?php echo $lang["lang_header"]["register_form"]["str_your_country"] ?>" >
 														
@@ -469,7 +470,7 @@
 												}
 											?>
 											<tr>
-												<td height="49">&nbsp;</td>
+												<td height="39">&nbsp;</td>
 												<td><input id="user_submit" value="<?php echo $lang["lang_header"]["register_form"]["str_post_button"] ?>" type="submit" class="inputbtn" /></td>
 											</tr>
 											<tr>
@@ -477,15 +478,14 @@
 										</table>
 									</form>
 								</div>
-								<div style="clear: both;">
-								</div>
+
 							</div>
 						</div>
-						<div style="display: block;" class="footer">
+						<span style="float:right;margin:0 10px 5px 0;">
 							<a href="#" class="close" onclick="close_window('div_SignUp')">
-								<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/closelabel.gif" title="close" class="close_image" border="0">
+			<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/closelabel.gif" title="close" class="close_image" border="0">
 							</a>
-						</div></td>
+						</span></td>
 					<td class="b"></td>
 				</tr>
 				<tr>
@@ -502,6 +502,7 @@
 	var lastDiv = "" ;
 	function showScreen ( divArea )
 	{
+	//alert(divArea);
 		lastDiv = divArea ;
 		var wd = $(document).width ( ) ;
 		var ht = $(document).height ( ) ;
@@ -509,7 +510,7 @@
 		$("#div_Background").css ( {"left" : "0px" , "top" : "0px" , "opacity" : 0.60} ).width( wd ).height ( ht ).show();
 		var n_wd = $("#"+divArea).width ( ) ;
 		var n_ht = $("#"+divArea).height ( ) ;
-		$("#"+divArea).css ( { "left" : ( ( wd / 2 ) - ( n_wd / 2 ) )+"px" , "opacity" : 0.10 } ).show().animate ( { top : "20%" , opacity : 1.0 } , "normal" ) ;
+		$("#"+divArea).css ( { "left" : ( ( wd / 2 ) - ( n_wd / 2 ) )+"px" , "opacity" : 0.10 } ).show().animate ( { top : "1%" , opacity : 1.0 } , "normal" ) ;
 	}
 	
 	function close_window ( divArea )

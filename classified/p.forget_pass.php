@@ -1,4 +1,6 @@
 <?php
+
+		
 	
 	session_start ( ) ;
 	
@@ -22,8 +24,13 @@
 	}
 	
 	
+
+	
+	
 	if ( $_POST )
 	{
+	
+
 		$loginArray = array ( 
 								"EmailAddress" => addslashes ( $_POST["EmailAddress"] ) 
 							) ;
@@ -36,7 +43,7 @@
 			$_SESSION["str_system_message"] = "Your password has been sent to your email address." ;
 		}
 		else
-		{
+		{	
 			$_SESSION["str_system_message"] = "Invalid login information." ;
 		}
 		

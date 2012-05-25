@@ -13,6 +13,8 @@
 	
 	if ( $_POST )
 	{
+	
+
 		$loginArray = array ( 
 								"EmailAddress" => addslashes ( $_POST["EmailAddress"] ) ,
 								"Password" => addslashes ( $_POST["Pass"] ) ,

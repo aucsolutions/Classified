@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<!-- Start of HtmlPageHtmlHead -->
+<!-- AreaHome -->
+<?php
+
+	include ( "core/inc.meta.php" ) ;
+
+?>
+<script language="javascript">
+		var selected_image_number = 0 ;
+		function zoom_image (  )
+		{
+			if ( selected_image_number == 0 )
+				var img_src = "<?php echo base_url ?>classified_img.php?clsid=<?php echo $classified["AdID"] ?>&gallery=full" ;
+			else
+				var img_src = "<?php echo base_url ?>classified_img.php?clsid=<?php echo $classified["AdID"] ?>&gallery=full&imgnum="+selected_image_number ;
+
+			var zom_img = new Image ;
+			zom_img.src = img_src ;
+			$("#spn_loading").show();
+			zom_img.onload = function ( )
+								{
+									$("#img_zoom").attr("src", img_src ) ;
+									showScreen ( 'div_image_zoom' ) ;
+									$("#spn_loading").hide();
+								} ;
+			
+		}
+		function select_image ( image_number )
+		{
+			selected_image_number = image_number ;
+			$("#spn_loading").show();
+			var img_src = "<?php echo base_url ?>classified_img.php?clsid=<?php echo $classified["AdID"] ?>&gallery=1&thumb=5&imgnum="+image_number ;
+			var zom_img = new Image ;
+			zom_img.src = img_src ;
+			$("#spn_loading").show();
+			zom_img.onload = function ( )
+								{
+									$("#main_image").attr("src", img_src ) ;
+									$("#spn_loading").hide();
+								} ;
+		}
+		 
+		function next_image ( )
+		{
+			if ( current_image < total_images )
+				select_image ( ++current_image ) ;
+		}
+		
+		function prev_image ( )
+		{
+			if ( current_image > 1 )
+				select_image ( --current_image ) ;
+			if ( current_image == 0 )
+				select_image ( 0 ) ;
+		}
+		
+	</script>
+</head>
+<body >
+	<div id="div_SendToFriend" class="popup" style="display:none; top:15%;  z-index:105; position:fixed; padding: 8px; width: auto;">
+		
+		<table border="0" align="center" cellpadding="0" cellspacing="0" id="facebox">
+			<tbody>
+				<tr>
+					<td class="tl"></td>
+					<td class="b"></td>
+					<td class="tr"></td>
+				</tr>
+				<tr>
+					<td class="b"></td>
+					<td class="body">
+					
+					<div style="display: block;" class="content">
+							<div id="popup">
+								<div id="heading">
+									Send to Friend
+								</div>
+								<div id="content">
+									<form action="<?php echo base_url ?>p.send_to_friend.php" class="new_user" id="new_user" method="post">
+										<input type="hidden" name="ClassifiedID" value="<?php echo $classified["AdID"] ?>">
+										<div style="margin: 0pt; padding: 0pt; display: inline;">
+										</div>
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="30%" height="35"><label for="user_username">Your Name:</label></td>
+												<td><input name="FullName" type="text" id="txtFullName" size="30" gtbfieldid="116" sch_req="1" sch_msg="Your Name" /></td>
+											</tr>
+											<tr>
+												<td height="35"><label for="user_password">Email:</label></td>
+												<td><input name="EmailAddress" type="text" id="txtEmailAddress" size="30" gtbfieldid="117" sch_req="1" sch_msg="Your Email" /></td>
+											</tr>
+											<tr>
+												<td width="30%" height="35"><label for="user_username">Friends Name:</label></td>
+												<td><input name="FName" type="text" id="fName" size="30" sch_req="1" sch_msg="Friends Name" /></td>
+											</tr>
+											<tr>
+												<td height="35"><label for="user_password">Friend's Email:</label></td>
+												<td><input name="FEmail" type="text" id="fEmail" size="30" sch_req="1" sch_msg="Friends Email" /></td>
+											</tr>
+											
+											<tr>
+												<td height="49">&nbsp;</td>
+												<td><input id="user_submit" name="commit" value="Send to Friend" type="submit" class="inputbtn" /></td>
+											</tr>
+											<tr>
+											</tr>
+										</table>
+									</form>
+								</div>
+								<div style="clear: both;">
+								</div>
+							</div>
+						</div>
+						<div style="display: block;" class="footer">
+							<a href="#" class="close"  onclick="close_window('div_SendToFriend')">
+								<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/closelabel.gif" title="close" class="close_image">
+							</a>
+						</div>
+						
+					</td>
+					<td class="b"></td>
+				</tr>
+				<tr>
+					<td class="bl"></td>
+					<td class="b"></td>
+					<td class="br"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+	<div id="div_image_zoom" style="display:none; top:15%;  z-index:105; position:fixed; padding: 8px; width: auto;">
+	
+		
+		<table border="0" align="center" cellpadding="0" cellspacing="0" id="facebox">
+			<tbody>
+				<tr>
+					<td class="tl"></td>
+					<td class="b"></td>
+					<td class="tr"></td>
+				</tr>
+				<tr>
+					<td class="b"></td>
+					<td class="body">
+					
+					<div style="display: block;" class="content">
+							<div id="popup">
+								<div id="heading">
+									Zoom
+								</div>
+								<div id="content">
+									<img src="" border="0" style="" id="img_zoom" />
+								</div>
+								<div style="clear: both;">
+								</div>
+							</div>
+						</div>
+						<div style="display: block;" class="footer">
+							<a href="#" class="close"  onclick="close_window('div_image_zoom')">
+								<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/closelabel.gif" title="close" class="close_image">
+							</a>
+						</div>
+						
+					</td>
+					<td class="b"></td>
+				</tr>
+				<tr>
+					<td class="bl"></td>
+					<td class="b"></td>
+					<td class="br"></td>
+				</tr>
+			</tbody>
+		</table>	
+		
+	</div>
+	<div id="main">
+		
+			<!-- Start of HtmlPageHeader_01 -->
+			<?php
+			include ( "inc.header.php" ) ;
+		?>
+		<div id="page" class="box">
+			
+			<?php
+				if ( ! empty ( $category_path_array ) )
+				{
+			?>
+				<div class="title01-top">
+				</div>
+				<div class="title01">
+					<div class="title01-in">
+						<h4><?php
+						echo "<a href='".base_url."'>".$app_init_data["SiteTitle"]."</a>" ;
+						foreach ( $category_path_array as $cat_path )
+							echo " &raquo; <a href='".base_url."category/".get_sef_url($cat_path["CategoryID"],"Category")."/'>".$cat_path["CategoryName"]."</a>" ;
+					 ?>&raquo; <?php echo $lang["lang_detail"]["str_ad_id"] ?> <?php echo $classified["AdID"] ?></h4>
+					</div>
+				</div>
+				<div class="title01-bottom">
+				</div>
+		
+			<?php
+				}
+			?>
+			
+			<table valign="top" border="0" width="100%">
+				<tbody>
+					
+					<tr>
+						<td colspan="10" align="center"><?php
+									$g_ads = $data->select ( "MarketingAdManager" ,"*", array ( "MarketingPlacing" => "Detail Top" ) ) ;
+									if ( ! empty ( $g_ads ) )
+										foreach ( $g_ads as $g_ad )
+											echo $g_ad["MarketingScript"] ;
+								?>
+						</td>
+					</tr>
+					<tr>
+						<td width="75%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 1px solid rgb(192, 192, 192);" align="left" valign="bottom"><div id="viewAd-header">
+								<div id="viewAd-header-content">
+									<div>
+										<h1 id="preview-local-title"><?php echo (intval ( $classified["IsOffer"] ) == 0 ? "Wanted:":""). $classified["AdTitle"] ?></h1>
+									</div>
+								</div>
+							</div></td>
+						<td align="right" style="border-bottom: 1px solid rgb(192, 192, 192);"><table>
+								<tr>
+									<!--<td style="background-image:url(<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/share.gif); background-repeat:no-repeat; background-position:left; padding-left:17px;" ><a href="#" onClick="showScreen ( 'div_SendToFriend' ) ;">Share</a></td>-->
+									<td>
+										<!-- AddThis Button BEGIN -->
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&pub=xa-4afe640357965f22"><img src="http://s7.addthis.com/static/btn/sm-share-en.gif" width="83" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=xa-4afe640357965f22"></script>
+<!-- AddThis Button END -->
+
+									</td>
+									<td align="center" style="font-size:12px; color:#959595;">&nbsp;&nbsp; | &nbsp;&nbsp;</td>
+									<td style="background-image:url(<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/print.gif); background-repeat:no-repeat; background-position:left; padding-left:17px;"><a href="<?php echo base_url ?>c-PrintAd/<?php echo $classified["AdID"] ?>/">
+									<?php echo $lang["lang_detail"]["str_print"] ?> 
+									</a></td>
+								</tr>
+							</table></td>
+					</tr>
+					<tr>
+						<td style="padding-top: 20px;" align="left" valign="top"><table width="100%" id="Images" border="0" cellpadding="0" cellspacing="0" style="font-size:12px;">
+								<tbody>
+									<tr>
+										<td style="padding-right: 5px;" valign="top"><div style="border:#D2D2D2 solid 1px; -moz-border-radius:5px; padding:8px; width:240px;">
+												<br>
+												<div class="gallery" align="center" >
+													<table border="0" cellpadding="0" cellspacing="0">
+														<tbody>
+															<tr>
+																<td class="imageStack"><img id="main_image" src="<?php echo base_url ; ?>classified_img.php?clsid=<?php echo $classified["AdID"] ?>&gallery=1&thumb=5" border="0" alt="No Image" style="width:225px; height:175px;" />
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<br>
+												<div align="center"><span id="spn_loading" style="display:none">
+												<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/loader.gif">
+												</span>
+												</div>
+												<br>
+												<center>
+													<table class="img-next-prev" border="0" cellpadding="0" cellspacing="0">
+														<tbody>
+															<tr>
+																<td align="center"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/prev.gif" border="0" style="cursor:pointer;" onClick="prev_image();">
+																</td>
+																<td  style="padding-left:5px; padding-right:5px;" valign="middle"><a href="#" title="Zoom" onClick="zoom_image ( ) ;">
+																		<div id="ViewLargeImage" style="-moz-border-radius:5px; border:#AAAAAA solid 1px;">
+																			<div style="background-image:url(<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/zoom.gif); background-repeat:repeat-x; height:23px; padding-left:2px; padding-right:4px;">
+																				<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/zoom_img.gif" width="14" height="17" border="0">
+																				<span style="margin-bottom:5px;"><?php echo $lang["lang_detail"]["str_view_image"] ?></span>
+																			</div>
+																		</div>
+																	</a>
+																</td>
+																<td align="center"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/next.gif" border="0" style="cursor:pointer;" onClick="next_image();" >
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</center>
+												<br>
+												<center>
+													<?php
+														$k = 0 ;
+															for ( $i = 1 ; $i < 7 ; $i++ )
+															{
+																if ( file_exists( "media/cls_".$classified["AdID"]."_".$i."_520.jpg" ) )
+																{
+																	$k++ ;
+														?>
+													<img src="<?php echo base_url ?>classified_img.php?clsid=<?php echo $classified["AdID"] ?>&imgnum=<?php echo $i ?>&gallery=0" style="cursor:pointer; margin:2px;" onClick="select_image ( <?php echo $i ?> ) ;">
+													<?php
+																}
+														
+															}
+														?>
+														<script language="javascript">var total_images = <?php echo $k; ?>; var current_image = 0 ;</script>
+												</center>
+											</div></td>
+										<td valign="top">
+												<table cellpadding="5" cellspacing="0" style="font-size:14px;">
+													<tr>
+														<td style="color:#959595; border-bottom:#BFBFBF solid 1px;"> <?php echo $lang["lang_detail"]["str_date_listed"] ?> </td>
+														<td style="color:#292929; border-bottom:#BFBFBF solid 1px;"><?php echo date ( "F j, Y" , strtotime ( $classified["DateAdded"] ) ) ; ?>
+														</td>
+													</tr>
+													<tr>
+														<td style="color:#959595; border-bottom:#BFBFBF solid 1px;"> <?php echo $lang["lang_detail"]["str_address"] ?>:</td>
+														<td style="color:#292929; border-bottom:#BFBFBF solid 1px;"><?php echo $classified["AddressStreet"] ?> , <?php echo $classified["AddressCity"] ?>, <?php echo $classified["AddressRegion"] ?>, <?php echo $classified["AddressZip"] ?>, <?php echo $classified["AddressCountry"] ?>
+														
+														<?php
+															if ( strlen ( $app_init_data["GoogleMapKey"] ) > 5 )
+															{
+														?>
+															<br>
+															<a href="<?php echo base_url ?>c-ViewMap/<?php echo $classified["AdID"] ?>/"><?php echo $lang["lang_detail"]["str_view_map"] ?></a>
+														<?php
+															}
+														?>
+														</td>
+													</tr>
+													<tr>
+														<td style="color:#959595; border-bottom:#BFBFBF solid 1px;"> <?php echo $lang["lang_detail"]["str_price"] ?> </td>
+														<td style="color:#292929; border-bottom:#BFBFBF solid 1px;"><?php
+																if ( intval ( $classified["PriceAlternative"] ) > 1 )
+																	echo $price_alt[intval ( $classified["PriceAlternative"] )] ;
+																else
+																	 echo $app_init_data["CurrencySymbol"].number_format ( $classified["Price"] , 2 ) ;
+															?>
+														</td>
+													</tr>
+												<?php
+													$last_id = 0 ;
+													if ( ! empty ( $extra_info ) )
+													{
+														foreach ( $extra_info as $fild )
+														{
+															if ( $fild["CategoryExtraFieldID"] != $last_id )
+																$last_id = $fild["CategoryExtraFieldID"] ;
+															else
+																continue ;
+															$values = $data->select ( "AdExtraField" , "*" , array ( "CategoryExtraFieldID" => $fild["CategoryExtraFieldID"] , "AdID" => $fild["AdID"] ) ) ;
+															if ( empty ( $fild["AdExtraFieldValue"] ) )
+																continue ;
+												?>
+													<tr>
+														<td style="color:#959595; border-bottom:#BFBFBF solid 1px;"><?php echo $fild["Field_name"] ?>
+														</td>
+														<td style="color:#292929; border-bottom:#BFBFBF solid 1px;">
+														<?php 
+															if ( count ( $values ) > 1 )
+																foreach ( $values as $v )
+																	echo $v["AdExtraFieldValue"]." - " ;
+															else
+																echo $fild["AdExtraFieldValue"] ;
+														?>
+														</td>
+													</tr>
+													<?php
+														}
+													}
+												?>
+												</table>
+											
+											<br>
+											<div id="ad-desc" class="ad-desc">
+												<?php echo $classified["Description"] ?>
+											</div>
+											<div align="center" style="margin:15px;">
+												<span style="background-color:#343434; color:#FEFEFE; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px; "> <?php echo $lang["lang_detail"]["str_visits"] ?> : <?php echo $classified["Views"] ?>
+												</span>
+											</div></td>
+										
+										
+										
+									</tr>
+								</tbody>
+							</table>
+							<div id="viewAd-actions" class="viewAd-actions">
+								<ul style="list-style-type:none">
+									<?php
+											if ( intval ( $classified["AccountID"] ) > 0 )
+											{
+										?>
+									<li><span class="poa">
+										<a href="#"> <?php echo $lang["lang_detail"]["str_poster_ads"] ?> </a>
+										</span></li>
+									<?php
+											}
+										?>
+								</ul>
+								<ul style="list-style-type:none">
+									<li>
+										<?php
+											if ( intval ( $_SESSION["login_account_id"] ) > 0 )
+											{
+										?>
+										<div id="wl_text" style="">
+											<a href="<?php echo base_url ?>p.watch.php?id=<?php echo $classified["AdID"] ?>" > <?php echo $lang["lang_detail"]["str_add_to_watch_list"] ?> </a>
+										</div>
+										<?php
+											}
+										?>
+									</li>
+								</ul>
+							</div>
+							<br>
+							<div class="sponsoredLinks">
+								&nbsp; <?php echo $lang["lang_detail"]["str_sponsor_links"] ?> 
+							</div>
+							<div align="left" style="margin:4px;">
+								<?php
+					$g_ads = $data->select ( "MarketingAdManager" ,"*", array ( "MarketingPlacing" => "Detail Bottom" ) ) ;
+					if ( ! empty ( $g_ads ) )
+						foreach ( $g_ads as $g_ad )
+							echo $g_ad["MarketingScript"] ;
+					?>
+							</div></td>
+						<!-- google_ad_section_start(weight=ignore) -->
+						<td class="viewadrightcol" valign="top"  >
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									<tr>
+										<td width="100%"><div class="box" style="padding-left: 5px; padding-right:5px;background-color:#FFF1CE;">
+												<form id="ReplyToAdForm" action="<?php echo base_url ; ?>reply_class_ad.php" method="post" name="viewadfrm" onSubmit="return validateForm('ReplyToAdForm');">
+													<div style="font-size: 1.2em; font-weight: bold; padding-bottom: 10px;">
+														<?php echo $lang["lang_detail"]["contact_poster_form"]["str_heading"] ?>
+													</div>
+													<input name="AdID" value="<?php echo $classified["AdID"] ?>" type="hidden" sch_req="1" sch_msg="Your email ">
+													<div class="first-field">
+														<div formfield="label" class="first-label">
+															<?php echo $lang["lang_detail"]["contact_poster_form"]["str_your_email"] ?>
+														</div>
+														<div class="first-input">
+															<a name="FromEmailAddress">
+															</a>
+															<div>
+																<input name="FromEmailAddress" value="" size="30" style="width: 100%;" type="text"  sch_req="1" sch_msg="Your email " >
+															</div>
+															<div>
+															</div>
+														</div>
+													</div>
+													<div class="first-field" style="clear:both;">
+														<div formfield="label" class="first-label">
+															<?php echo $lang["lang_detail"]["contact_poster_form"]["str_message"] ?>
+														</div>
+														<div class="first-input">
+															<a name="EmailText">
+															</a>
+															<div>
+																<textarea name="EmailText" rows="5" style="width: 100%;" cols="25" title=""  sch_req="1" sch_msg="Message" ></textarea>
+															</div>
+															<div>
+															</div>
+														</div>
+													</div>
+													<div class="field" style="clear:both; padding:5px;">
+													<table border="0" cellpadding="0" cellspacing="0">
+														<tbody>
+															<tr>
+																<td style="padding-right: 15px;" nowrap="nowrap"><strong><?php echo $lang["lang_detail"]["contact_poster_form"]["str_verif_code"] ?></strong></td>
+																<td><strong><?php echo $lang["lang_detail"]["contact_poster_form"]["str_enter_code"] ?></strong>
+																</td>
+															</tr>
+															<tr valign="top">
+																<td style="padding-right: 15px;"><img class="imageAlign" alt="Enable images to see number" src="<?php echo base_url ?>yadcap.php" border="0" >
+																</td>
+																<td><div id="BbUserInputId_field" class="first-field">
+																		<div class="first-input">
+																			<div>
+																				<input name="BBUV" value="" id="BbUserInputId" size="7" type="text">
+																			</div>
+																			<div id="BbUserInputId_error">
+																			</div>
+																		</div>
+																	</div></td>
+															</tr>
+														</tbody>
+													</table>
+													<br>
+													<input id="send" class="newButton" value="<?php echo $lang["lang_detail"]["contact_poster_form"]["str_post_button"] ?>" onClick="$('#ReplyToAdForm').trigger('submit');return false" style="margin-bottom: 10px;" type="submit">
+												</form>
+												</div>
+											<br>
+											<div>
+												<?php
+														$g_ads = $data->select ( "MarketingAdManager" ,"*", array ( "MarketingPlacing" => "Detail Right" ) ) ;
+														if ( ! empty ( $g_ads ) )
+															foreach ( $g_ads as $g_ad )
+																echo $g_ad["MarketingScript"] ;
+													?>
+											</div></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<!-- google_ad_section_end(weight=ignore) -->
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<?php
+			
+				
+				include ( "inc.footer.php" ) ;
+			?>
+		</div>
+		<div id="myFavorites-panel">
+		</div>
+	</div>
+</body>
+</html>

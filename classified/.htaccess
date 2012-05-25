@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+Options +Indexes
+RewriteEngine On
+
+RewriteRule ^(.*)/$ index.php?qstr=$1
+RewriteRule ^(.*).htm$ index.php?qstr=$1
+RewriteRule ^rss/ /rss.php?$1 [QSA]
+

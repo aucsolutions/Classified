@@ -96,15 +96,9 @@
 if ( intval ( $_SESSION["login_account_id"] ) > 0 )
 {
 ?>
-
-<!---------
 <li><a href="<?php echo base_url ?>Member/classifiedlist.php" style="text-decoration: none; color: rgb(0, 51, 153);"> <?php echo $lang["lang_header"]["str_my_ads"] ?> </a></li>
 	
 <li><a href="<?php echo base_url ?>Member/watchlist.php"  style="text-decoration: none; color: rgb(0, 51, 153);"> <?php echo $lang["lang_header"]["str_my_watch_list"] ?> </a></li>
------------>
-
-<li><?php echo "Login As: ".$_SESSION["login_member_email"] ; ?></li>
-
 	
 <li><a  href="<?php echo base_url ?>p.logout.php" style="text-decoration: none; color: rgb(0, 51, 153);"> <?php echo $lang["lang_header"]["str_log_out"] ?> </a></li>
 	<?php
@@ -165,9 +159,9 @@ else
     border: 1px solid #CCCCCC;
     border-radius: 6px 6px 6px 6px;
     float: left;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
-    left: -528px;
+    left: -568px;
     padding: 10px 0 10px 10px;
     position: relative;
     top: -69px;
@@ -195,11 +189,11 @@ else
 
 
       </div>
-	 <!---RIGHT SECTION BLOCK CODE ENDS HERE         *****LOGIN BUTTON CLICK BLOCK*****              ----> 
+	 <!---RIGHT SECTION BLOCK CODE ENDS HERE----> 
 	  <div id="div_Background" style="display:none; background-color:#262626; position:absolute; z-index:101"  onclick="close_window()"></div>
     </div>
   <div id="div_Login" class="popup" style="display:none; top:15%; z-index:105; position:fixed; padding: 8px; width: auto;">
-	<!------	<table border="0" align="center" cellpadding="0" cellspacing="0" id="facebox" class="facebox">
+		<table border="0" align="center" cellpadding="0" cellspacing="0" id="facebox" class="facebox">
 			<tbody>
 				<tr>
 					<td class="tl"></td>
@@ -220,8 +214,8 @@ else
 										</div>
 										<table width="100%" border="0" cellspacing="0" cellpadding="0">
 											<tr>
-							<td width="19%" height="52"><label for="user_username"><?php echo $lang["lang_header"]["login_form"]["str_your_email"] ?></label></td>
-							<td colspan="2"><input id="user_username" name="EmailAddress" size="30" type="text" /></td>
+												<td width="19%" height="52"><label for="user_username"><?php echo $lang["lang_header"]["login_form"]["str_your_email"] ?></label></td>
+												<td colspan="2"><input id="user_username" name="EmailAddress" size="30" type="text" /></td>
 											</tr>
 											<tr>
 												<td><label for="user_password"><?php echo $lang["lang_header"]["login_form"]["str_your_password"] ?></label></td>
@@ -259,122 +253,20 @@ else
 					<td class="br"></td>
 				</tr>
 			</tbody>
-		</table>         ----->
-		
-		
-		
-		<div class="mainbox">
-  <div class="popupheading"><span>Login</span>
-    <div class="closebtn">
-	<a href="#" class="close" onclick="close_window('div_Login')">
-	<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/closebtn.png" width="16" height="16" alt="" />
-	</a>
-	</div>
-  </div>
-  
-  <form action="<?php echo base_url ?>p.login.php" class="new_userd" id="new_userd" name="new_userd" method="post">
-  <ul class="inputlist">
-    <li><span class="redcolor">*</span>Email Address or Phone No.</li>
-    <li>
-      <input id="user_username" name="EmailAddress" class="inputbox" type="text" />
-      &nbsp;&nbsp;<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/alert_icon.png" width="21" height="21" alt="" /></li>
-    <li><span class="redcolor">*</span>Password</li>
-    <li>
-      <input id="user_password" name="Pass" class="inputbox" type="password" />
-      &nbsp;&nbsp;</li>
-    
-
-    
-    <li class="rightalign">
-	<a href="javascript:document.new_userd.submit();" onclick=""> 
-	<span class="button">Login</span>
-	</a>
-	 <a href="#" onclick="close_window()">
-	 <span class="button">Cancel</a></span></li>
-    <li>
-	
-	</form>
-      <div class="leftsection">Join <a href="#" class="purplecolor">Ozthink.com</a> It's Free</div>
-      <div class="rightsection"><a href="#"  onclick="$('#div_Login').hide(); showScreen ( 'div_Forget_pass' ) ;"   class="purplecolor">Forgot password?</a></div>
-    </li>
-  </ul>
-</div>
-		
-		
+		</table>
 	</div>
     
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	<!---------------------------------------------------------------------CODE------------------------------>
-	
-	
-	
-	
+	<!--------------------ADDED ON 23/05/2012---------------->
 	
 	<div id="div_Forget_pass" class="popup" style="display:none; top:15%; z-index:105; position:fixed; padding: 8px; width: auto;">
-		<!--<table border="0" align="center" cellpadding="0" cellspacing="0" id="facebox">
-			<tbody>
-				<tr>
-					<td class="tl"></td>
-					<td class="b"></td>
-					<td class="tr"></td>
-				</tr>
-				<tr>
-					<td class="b"></td>
-					<td class="body">
-					<div id="popup">
-					<div id="heading">
-						<?php echo $lang["lang_header"]["str_forget_pass"] ?>
-					</div>
-					<div id="content">
-						<form action="<?php echo base_url ?>p.forget_pass.php" method="post" class="new_user" id="new_user">
-							<div style="margin: 0pt; padding: 0pt; display: inline;">
-							</div>
-							<table width="100%" cellspacing="3" cellpadding="2">
-								<tr>
-									<td align="right" ><label><?php echo $lang["lang_header"]["forget_form"]["str_your_email"] ?></label></td>
-									<td><input type="text" name="EmailAddress" id="txtEmail" />
-									</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td colspan="100" align="center"><input type="submit" value="<?php echo $lang["lang_header"]["forget_form"]["str_post_button"] ?>" class="inputbtn" />
-									</td>
-								</tr>
-							</table>
-						</form>
-						</div>
-					</div>
-					<div style="display: block;" class="footer">
-							<a href="#" class="close" onclick="close_window('div_Forget_pass')">
-								<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/closelabel.gif" title="close" class="close_image" border="0">
-							</a>
-						</div>
-					</td>
-					<td class="b"></td>
-				</tr>
-				<tr>
-					<td class="bl"></td>
-					<td class="b"></td>
-					<td class="br"></td>
-				</tr>
-			</tbody>
-		</table>-->
-		
-		
-		
-		
-		<div class="mainbox">
+	
+	
+	
+	
+			<div class="mainbox">
   <div class="popupheading"><span>Forgot Password?</span>
     <div class="closebtn">
 	<a href="#" class="close" onclick="close_window('div_Forget_pass')">
@@ -386,7 +278,7 @@ else
   <ul class="inputlist">
     <li><span class="redcolor">*</span>Email Address or Phone No.</li>
     <li>
-      <input  class="inputbox" type="text" name="EmailAddress" id="txtEmail" />
+      <input class="inputbox" type="text" name="EmailAddress" id="txtEmail" />
       &nbsp;&nbsp;
 
 		<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/alert_icon.png" title="close" class="close_image" border="0">
@@ -395,17 +287,17 @@ else
     
     
     
-   <!--- 
+   <!-- 
     <li class="rightalign"> <input type="submit" value="<?php echo $lang["lang_header"]["forget_form"]["str_post_button"] ?>" class="inputbtn" name="submit" /></li>
-	---->
-	
-	 <li class="rightalign">
+    -->
+    
+    	 <li class="rightalign">
 	 <a href="javascript:document.new_user.submit();" onclick="">
 	  <span class="button">Retrieve Password</a></span></li>
-	
+    
 	</form>
     <li>
-      <div class="leftsection"><a href="#"  onclick="$('#div_Forget_pass').hide(); showScreen ( 'div_SignUp' ) ;" class="purplecolor">Sign In</a></div>
+      <div class="leftsection"><a href="#" class="purplecolor">Sign In</a></div>
       <div class="rightsection" style="width: 150px">Join<a href="#" class="purplecolor">Ozthink.com</a> It's Free</div>
     </li>
   </ul>
@@ -414,30 +306,18 @@ else
   
   
 </div>
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+
+	
+	
 	</div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!---------------------------CODE EDIT----------------------------------------------------------->
-	
-	
-	
+	<!------------------BLOCK CODE ENDS HERE---------------->
 	
 	
 	
@@ -563,36 +443,6 @@ else
 				</tr>
 			</tbody>
 		</table>
-		
-		
-		<!----------
-		<div class="mainbox">
-  <div class="popupheading"><span>Create an account It’s free !!</span>
-    <div class="closebtn">
-	<a href="#" class="close" onclick="close_window('div_SignUp')">
-	<img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/closebtn.png" width="16" height="16" alt="" />
-	</a>
-	</div>
-  </div>
-  <ul class="inputlist">
-    <li><span class="redcolor">*</span>Email Address or Phone No.</li>
-    <li>
-      <input name="" class="inputbox" type="text" />
-      &nbsp;&nbsp; <img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/alert_icon.png" width="21" height="21" alt="" /></li>
-    <li>Type the characters you see in the picture below.<br />
-    <img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/captha.jpg" width="258" height="99" alt="" /><br />
-    Letter are not case-sensitive    </li>
-    
-   
-    <li class="rightalign"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/progressbar.jpg" width="100" height="3" alt="" /></li>
-    <li class="rightalign"> <span class="button">Next</span></li>
-    <li>
-      <div class="leftsection">Already Registered <a href="#" onclick="$('#div_Forget_pass').hide(); showScreen ( 'div_SignUp' ) ;" class="purplecolor">SignIn</a></div>
-      <div class="rightsection"><a href="#" class="purplecolor">Forgot password?</a></div>
-    </li>
-  </ul>
-</div>
-	-------------->	
 	</div>
 	
 	

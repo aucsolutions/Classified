@@ -20,7 +20,7 @@
 
 if ( intval ( $_SESSION["login_account_id"] ) > 0  )
 {
-echo "My Dashboard";
+echo "Login As: ".$_SESSION["login_member_email"] ;
 //echo $data->count_record ( "Classified" , array ( "IsActive" => 1 , "AccountID" => $_SESSION["login_account_id"] ) ) ;
 }
 else

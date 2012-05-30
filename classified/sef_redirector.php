@@ -1,6 +1,9 @@
 <?php
 	
 	$qstring = explode ( "/" , $_GET["qstr"] ) ;
+
+	if($_POST['themeVal'] == 1) { $qstring[0] = "c-CategorySelect"; $qstring[1] = $_POST['category']; }
+
 	switch ( $qstring[0] )
 	{
 		case "c-Posted" :

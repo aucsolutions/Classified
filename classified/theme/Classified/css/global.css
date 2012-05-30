@@ -1,0 +1,8 @@
+body{ font-family:"lucida grande","Lucida Sans Unicode",tahoma,verdana,arial,sans-serif; color: #333; margin: 0; padding: 0; background: url(../images/main_back.jpg) repeat-x top left;}
+
+h1, h2, h3, h4, h5, h6, p, img, input, select, a{margin: 0;padding: 0;font-weight: normal;}
+select, textarea, file, dropdown{border: 1px solid #CCCCCC;color: #333333;font-size: 11px;}
+
+img{ border: 0px; text-decoration: none;}
+a{ text-decoration: none;}
+

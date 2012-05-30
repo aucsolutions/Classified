@@ -1,0 +1,359 @@
+@charset "utf-8";
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #ffffff;
+	background-image:url(topbarbg2.gif);
+	background-repeat:repeat-x;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+
+/* Tips for Elastic layouts 
+1. Since the elastic layouts overall sizing is based on the user's default fonts size, they are more unpredictable. Used correctly, they are also more accessible for those that need larger fonts size since the line length remains proportionate.
+2. Sizing of divs in this layout are based on the 100% font size in the body element. If you decrease the text size overall by using a font-size: 80% on the body element or the #container, remember that the entire layout will downsize proportionately. You may want to increase the widths of the various divs to compensate for this.
+3. If font sizing is changed in differing amounts on each div instead of on the overall design (ie: #sidebar1 is given a 70% font size and #mainContent is given an 85% font size), this will proportionately change each of the divs overall size. You may want to adjust based on your final font sizing.
+*/
+.oneColElsCtrHdr #container {
+	  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	
+	margin: 5px auto; /* the auto margins (in conjunction with a width) center the page */
+	
+	-moz-border-radius:6px;
+	padding:3px;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColElsCtrHdr #header { 
+	padding: 0 7px 0 17px;
+	color:#FFFFFF;
+	height:130px;
+
+	 /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.oneColElsCtrHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+.oneColElsCtrHdr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background: #F8F9FA;
+	float:left;
+	width:90%;
+	border:#f8f9fa solid 1px;
+	-moz-border-radius:4px;
+	margin:10px;
+}
+
+#mainContent
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+}
+.oneColElsCtrHdr #footer { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	clear:both;
+	margin-top:8px;
+} 
+.footer_menu
+{ 
+	padding: 5px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	
+	clear:both;
+	margin-top:8px;
+} 
+.mainpage1
+{
+	color:#3F6E7D;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+}
+
+	
+
+
+.oneColElsCtrHdr #footer p {
+	background-color:#325560;
+	margin-top: 10px; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+.oneColElsCtrHdr #footer p a {
+	color:#E2E2E2;
+	font-size:12px;
+	text-decoration:underline;
+}
+
+
+/************************** Top menu *************************************/
+
+div #menu
+{
+	padding:5px;
+	border:#BBBBBB solid 1px;
+	float:left;
+	clear:both;
+	-moz-border-radius:6px;
+	width:100%;
+}
+
+#menu div
+{
+	margin:2px ;
+	clear:both;
+	color:#ffffff ;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold ;
+	font-size:12px ;
+	text-transform:uppercase ;
+	padding:5px;
+	margin:5px;
+	cursor:pointer;
+	
+	border:#CFCFCF solid 1px;
+	background-image:url(menutopbar2.gif); 
+	background-repeat:repeat-x;
+}
+
+#menu div:hover
+{
+	
+}
+
+#menu div img
+{
+	height:12px;
+	width:12px;
+}
+
+#menu div.selected_menu
+{
+	margin:5px ;
+	color:#DBDBDB ;
+	
+}
+
+#menu ul
+{
+	background-color:#ffffff;
+	list-style-type:none;
+	margin-left:0px;
+	padding:0px;
+	font-size:10px;
+}
+
+#menu ul li
+{
+	color:#392D48;
+	padding:3px;
+	font-weight:normal;
+	text-transform:none;
+}
+
+#menu ul li.li_close
+{
+	color:#96383A;
+	font-weight:bold;
+	padding:3px;
+	cursor:pointer;
+}
+
+#menu ul li div.menu_description
+{
+	color:#949494;
+	font-size:10px;
+}
+
+#menu ul li a
+{
+	color:#2B4953;
+	text-decoration:none;
+	font-weight:bold;
+	border:none;
+	font-size:12px;
+}
+
+#menu ul li a:hover
+{
+	text-decoration:underline;
+	border:none;
+}
+
+/************************** END Top menu *************************************/
+
+
+/***************************Form Entries *************************************/
+
+form.application_form
+{
+
+}
+
+form.application_form td
+{
+	border:#D5D5D5 solid 1px;
+}
+
+
+form.application_form td.form_title
+{
+	background-color:#EEF2F0;
+	color:#000000;
+	font-size:12px;
+	font-weight:bold;
+	border:#7D7D7D solid 1px;
+	text-align:right;
+	vertical-align:top;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+form.application_form input.form_text
+{
+	background-color:#FCFCFC;
+	color:#000000;
+	border:#0E0E0E solid 1px;
+	padding:2px;
+}
+
+form.application_form textarea.form_textarea
+{
+	background-color:#FCFCFC;
+	color:#000000;
+	border:#0E0E0E solid 1px;
+	padding:2px;
+}
+
+form.application_form input.submit_button
+{
+	background-color:#FCFCFC;
+	color:#000000;
+	border:#0E0E0E solid 1px;
+	padding:2px;
+}
+form.application_form select.form_select
+{
+	background-color:#FCFCFC;
+	color:#000000;
+	border:#0E0E0E solid 1px;
+	padding:2px;
+}
+
+
+
+/***************************END Form Entries *************************************/
+
+
+div.div_help
+{
+	display:none;
+	font-size:12px;
+	color:#909090;
+}
+
+
+/**************************** Lisint *******************************************/
+table.listings
+{
+	border:#AAAAAA solid 1px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+tr.listing_heading
+{
+	background-image:url(bcee.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	background-color:#c1cde5;
+}
+
+tr.listing_heading th
+{
+	color:#FFFFFF;
+	height:25px;
+}
+
+tr.listing_even
+{
+	background-color:#FFFFFF;
+}
+
+tr.listing_even:hover
+{
+	background-color:#E3E4EE;
+}
+
+
+tr.listing_even td
+{
+	color:#333462;
+}
+
+tr.listing_odd
+{
+	background-color:#F4F4F4;
+}
+tr.listing_odd:hover
+{
+	background-color:#E3E4EE;
+}
+
+tr.listing_odd td
+{
+	color:#000000;
+}
+
+tr.listing_paging
+{
+	background-color:#EEF2EC;
+}
+
+table.listings a.pagination_link
+{
+	padding:3px;
+	margin:2px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	color:#3A6B32;
+	border:#A8A8A8 solid 1px;
+}
+
+a.title_link
+{
+	font-weight:bold;
+	color:#000066;
+	text-decoration:none;
+}
+
+/**************************** Lisint *******************************************/
+
+div.system_message
+{
+	background-color:#D9E1D5;
+	padding:5px;
+	margin:2px;
+	padding-left:10px;
+	border:#568E48 solid 1px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#4D3764;
+}
+
+table.entry_form
+{
+	width:100%;
+}
+
+a.menu_top_link
+{
+	font-size:14px;
+	color:#000000;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+a.menu_top_link:hover
+{
+	text-decoration:underline;
+}

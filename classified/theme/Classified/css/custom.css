@@ -1,0 +1,76 @@
+#wrappercontainer{width:1007px; height:auto; margin:0 auto}
+#maincontainer{width:1007px; height:auto; float:left; margin-top: 13px;}
+
+#header{ width: 1007px; height: 75px; float: left;}
+#header .logo{ width: 150px; height: auto; float: left;}
+#header .rightsection{ width: 300px; height: auto; float: right;}
+
+ul.rightnav{ width: auto; height: auto; float: right; margin: 0px; padding: 0px;}
+ul.rightnav li{ width: auto; height: auto; float: left; margin: 0px; padding: 0px; list-style: none; margin-right: 20px; }
+ul.rightnav li a{ color: #333; font-size: 16px;}
+
+.createaccount{ width: 134px; height: auto; float: left; color: #642c8e; font-size: 14px; padding-top: 33px;}
+.createaccount a{ color: #642c8e; font-size: 14px;}
+
+#searchsection{ width: 1007px; height: auto; float: left;}
+#searchsection .leftsection{ width: 841px; height: auto; float: left;}
+#searchsection .leftsection h1{font-weight:normal;font-size:20px;color:#333;border-top:solid 1px #333;padding:10px 0 10px 0;font-family:"lucida grande","Lucida Sans Unicode",tahoma,verdana,arial,sans-serif; }
+#searchsection .leftsection p{font-size:11px;}
+#searchsection .mainsearch{ width: 839px; height: auto; float: left; border: 1px #e2e1e1 solid; background: #f7f7f7; padding-bottom: 10px; margin-bottom: 25px;}
+#searchsection .rightaddsection{ width: 160px; height: auto; float: right; margin:10px 0 0 0;}
+#searchsection ul.addtext{ width: 160px; height: auto; float: left; margin: 0px; padding: 0px; margin-top: 25px; }
+#searchsection ul.addtext li{ width: 140px; height: auto; float: left; margin: 0px; padding: 0px; list-style: none; font-size: 11px; padding-bottom: 20px; line-height: 15px;}
+#searchsection ul.addtext li span{ color: #642c8e; width: 100%; height: auto; float: left;}
+#searchsection ul.addtext li .datetime{ width: 100%; height: auto; float: left; padding-top: 10px; color: #888;}
+
+#searchsection .search{ width: 819px; height: 355px; float: left; padding: 10px;}
+#searchsection .search_tagline{ width: 819px; height: auto; float: left; text-align: center; color: #333333; font-size: 48px; padding-top: 80px; padding-bottom: 30px;}
+#searchsection .search_tagline span{ width: 819px; height: auto; float: left; text-align: center; color: #636363; font-size: 26px;}
+.searchbox{ width: 760px; height: auto; float: left; padding-left: 35px;}
+ul.searchbox-section{ width: 628px; height: auto; float: left; margin: 0px; padding: 0px;}
+ul.searchbox-section li { width: 197px; height: 30px; float: left; margin: 0px; padding: 0px; list-style: none; border: 1px solid #B6C4DA; background: #fff; margin-right: 10px;}
+ul.searchbox-section li .arrow {
+	background: -moz-linear-gradient(center top , #F2F6FA, #E4EBF2) repeat scroll 0 0 transparent;
+    border-left: 1px solid #9FB2CE;
+    color: #62768F;
+    height: 30px;
+    line-height: 31px;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 40px;
+	float: right;
+}
+.search-inputbox{ width: 148px; height: auto; float: left; font-size: 15px; color: #333; margin: 4px 0 0 4px; border: 0px;}
+.search-btn{ width: 127px; height: auto; float: left;}
+
+.premiumadd-slider{ width: 819px; height: auto ; float: left; background: #fff; padding: 10px;}
+.premiumadd-slider .heading{ width: 819px; height: auto; float: left; text-align: center; color: #642c8e; font-size: 16px; padding-top: 30px; padding-bottom: 15px;}
+.premiumadd-slider .slidermain{ width: 819px; height: auto; float: left;}
+.premiumadd-slider .leftarrow{ width: 16px; height: auto; float: left ; padding-top: 50px;}
+.premiumadd-slider .rightarrow{ width: 16px; height: auto; float: right; padding-top: 50px;}
+.premiumadd-slider .imageslider{ width: auto; height: auto; float: left; margin: 0px; padding: 0px;}
+.premiumadd-slider .imageslider ul{ width: auto; height: auto; float: left; margin: 0px; padding: 0px; padding-left: 27px;}
+.premiumadd-slider .imageslider ul li{ width: 125px; height: auto; float: left; list-style: none; display: inline; padding-left: 27px; text-align: center; font-size: 11px; color: #666; line-height: 15px; }
+.premiumadd-slider .imageslider ul li:first-child{ padding: 0px;}
+.premiumadd-slider .imageslider ul li span{ float: left; width: 125px; height: auto; padding-top: 5px;}
+
+.appstote{ width: 839px; height: 102px; float: left; background: url(../images/appstore_back.jpg) repeat-x top left; border: 1px solid #E2E1E1;}
+.appstote .addstore{ width: 568px; height: auto; float: left; padding-top: 9px; font-size: 11px; padding-right: 10px; border-right: 1px #dedede solid; line-height: 15px;}
+.appstote .addstore img{ padding-right: 15px;}
+.appstote .followus{ width: 256px; height: auto; float: left; text-align: center;}
+.appstote .followus span{ width: 256px; height: auto; float: left; text-align: center; font-size: 24px; color: #333333; padding-top: 9px; padding-bottom: 9px;}
+
+#footer{ width: 100%; height: auto; float: left; margin-top: 59px; background: url(../images/footer_bg.jpg) repeat-x top left; }
+#footer .wrapper{ width: 1007px; height: auto; margin: 0 auto; }
+#footer .footertop{ width: 1007px; height: 23px; float: left; font-size: 11px; color: #fff; padding-top: 10px; }
+#footer .footerbottom{ width: 1007px; height: auto; float: left;}
+
+.footerleft{ width: 500px; height: auto; float: left; text-align: left;}
+.footerleft span{ font-size: 11px; padding-top: 15px; float: left; line-height: 15px;}
+.footerright{  width: 500px; height: auto; float: right; text-align: right;}
+
+ul.footernav{ width: auto; height: auto; float: right; margin: 0px; padding: 0px;}
+ul.footernav li{ width: auto; height: auto; float: left; list-style: none; margin: 0px; padding: 0 8px 0 8px; background: url(../images/footer_devider.jpg) left center no-repeat;}
+ul.footernav li:first-child{ background: none;}
+ul.footernav li a{ color: #fff;}

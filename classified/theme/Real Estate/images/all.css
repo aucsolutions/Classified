@@ -1,0 +1,158 @@
+#facebox .b {
+  background:url(b.png);
+}
+
+#facebox .tl {
+  background:url(tl.png);
+}
+
+#facebox .tr {
+  background:url(tr.png);
+}
+
+#facebox .bl {
+  background:url(bl.png);
+}
+
+#facebox .br {
+  background:url(br.png);
+}
+
+#facebox {
+	margin: auto 0px;
+	text-align: left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+#facebox .popup {
+  position: relative;
+}
+
+#facebox table {
+  border-collapse: collapse;
+}
+
+#facebox td {
+  border-bottom: 0;
+  padding: 0;
+}
+
+#facebox .body {
+  padding: 0px;
+  background: #fff;
+  width: 400px;
+}
+
+#facebox .loading {
+  text-align: center;
+  padding: 100px;
+}
+
+#facebox .image {
+  text-align: center;
+}
+
+#facebox img {
+  border: 0;
+  margin: 0;
+}
+
+#facebox .footer {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: right;
+}
+
+#facebox .tl, #facebox .tr, #facebox .bl, #facebox .br {
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+#facebox_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+}
+
+.facebox_hide {
+  z-index:-100;
+}
+
+.facebox_overlayBG {
+  background-color: #000;
+  z-index: 99;
+}
+
+#popup #heading {
+   font-family:Arial, Helvetica, sans-serif;
+  background: #2d4172;
+  color: #FFF;
+  font-size: 18px;
+  padding: 10px;
+  border-bottom: 1px solid #BD7837;
+}
+#popup #content {
+  background-color: #FFF;
+  padding: 20px;
+}
+#popup #close {
+  background-color: #EEE;
+  border-top: 1px solid #CCC;
+  padding: 8px 16px;
+  text-align: right;
+}
+#popup input, #popup textarea {
+	margin: 0px 0 0 5px!important;
+	display: inline;
+	padding: 5px;
+	border: 1px solid #DADFE3;
+	border-top-color: #999;
+	border-left-color: #999;
+	border-bottom-color: #C0C0C0;
+	border-right-color: #C0C0C0;
+	margin-bottom: 0px;
+
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#facebox input:hover, #facebox textarea:hover {
+  background-color: #F1F5F7;
+}
+#facebox #submit {
+  text-align: center;
+}
+#facebox textarea {
+  width: 300px;
+}
+#popup form {
+  margin: 10px;
+  display: block;
+}
+#facebox input.inline {
+  margin: 5px!important;
+  display: inline!important;
+}
+
+#facebox .inputbtn {
+   font-family:Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding: 5px; 
+  border: #C0C0C0;
+  background: #2d4172;
+}
+#facebox .inputbtn:hover{
+   font-family:Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding: 5px; 
+  border: #C0C0C0;
+  background: #2d4172;
+}

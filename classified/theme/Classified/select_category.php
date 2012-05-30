@@ -5,6 +5,65 @@
 <?php include ( "core/inc.meta.php" ) ; ?>
 
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+$(".detailsmain").hide();
+$("#aftercontinue").hide();
+$("#afterpayment").hide();
+$("#finalverify").hide();
+  $("#preview").click(function() {
+  var adtitletoshow1 = $("#form_post_ad").serialize();
+   //$("#previewadtitle").text(adtitletoshow);
+   
+   var adtitletoshow = $("#form_post_ad").serializeArray();
+  // alert(adtitletoshow);
+   $.each(adtitletoshow, function(i, field){
+   if( field.name == 'adtitle'){
+   $(".add_head").text(field.value);
+  // alert(field.value);
+    }
+	
+	   if( field.name == 'addesc'){
+   $(".ad_prev_desc").text(field.value);
+  // alert(field.value);
+    }
+	
+		   if( field.name == 'keyword'){
+   $(".ad_prev_keyowrd").text(field.value);
+  // alert(field.value);
+    }
+	
+		   if( field.name == 'price'){
+   $(".ad_prev_price").text(field.value);
+  // alert(field.value);
+    }
+	
+});
+
+   
+     $("#continue").click(function(){
+  $("#inline_content").hide();
+  $("#aftercontinue").show();
+//alert(adtitletoshow1);
+  
+  var formdata3 = $('#form_post_ad :input[name="category"]').val();
+  $("#aftercontinue").val(formdata3);
+
+    
+  });
+   
+   
+    $("#form_post_ad").hide();
+	$(".detailsmain").show();
+  });
+  
+  
+
+  
+});
+</script>
+
 <!---------BLOCK CODE FOR TEXT WORD COUND CSSS ADDED ON 22-05-2012 BY SWAPNESH----->
 
 <script type="text/javascript">
@@ -222,8 +281,10 @@ $("#image_stack").append ( str_to_embed ) ;
 	<div id="searchsection">
       <div class="leftsection">
         
-        <h1><?php echo "Place an Ad" ?></h1>
-		
+        <h1>Place an Ad</h1>
+	
+	
+	
 <form action="" method="post" name="go_tohead" id="form_post_ad" enctype="multipart/form-data" onSubmit="return validateForm('form_post_ad');">
 									
 									
@@ -333,6 +394,8 @@ div.showdiv{}
 div.showdiv ul{list-style:none;margin:0;padding:0;}
 div.showdiv ul li {overflow:hidden;}
 div.showdiv ul li label{display:block;float:left;width:120px}
+div.message .button{float:left;}
+div.message #cancel{margin:0 159px 0 0;}
 </style>
 
 <img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/attachment.png" />
@@ -394,9 +457,9 @@ div.showdiv ul li label{display:block;float:left;width:120px}
 
 
 
-<div id="showdiv19" class="showdiv" style="display:none;">
+<div id="showdiv19" style="display:none;">
 
-<label>Price :</label> <input name="price" id="price" type="text" size="30" />
+<label>Price :</label> <input name="relprice" id="relprice" type="text" size="30" />
 
 <label>BR :</label> 
 <select name="br" id="br">
@@ -473,7 +536,7 @@ for ($i=1; $i <= 8; $i++)
 </ul>
 </div>
 
-<div id="showdiv25" class="showdiv" style="display:none;">
+<div id="showdiv25" style="display:none;">
 
 <label>Your Age :</label> <input name="age" id="age" type="text" size="30" />
 
@@ -539,7 +602,7 @@ for ($i=1; $i <= 8; $i++)
 </ul>
 </div>
 
-<div id="showdiv107" class="showdiv" style="display:none;">
+<div id="showdiv107" style="display:none;">
 
 <label>Your Age :</label> <input name="age" id="age" type="text" size="30" />
 
@@ -757,7 +820,7 @@ endforeach ;
 
 
 <span class="button" id="preview">Preview</span>
-<span class="button" id="cancel">Cancel</span>
+<span class="button" id="cancel" onClick="window.location.reload()">Cancel</span>
 
 
 
@@ -783,8 +846,73 @@ endforeach ;
 
 </fieldset>
 
-<fieldset class="sectionwrap">
-<legend></legend>
+
+
+
+
+
+
+
+
+
+
+
+
+<input id="PostAd" value="<?php echo $lang["lang_post_form"]["str_post_button"] ?>" class="newButton" onClick="MainFormObj.submit();this.disabled=true; return false;" type="submit">
+
+</form>
+
+<div class="detailsmain">
+          <div class="maincontentsection">
+            <div class="addcontainer" id='inline_content' style="padding:0 178px 5px 5px; border:1px solid #E2E1E1;">
+              <div class="add_head">
+				<!----PLACE FOR AD TITLE------>
+			  </div>
+              <div class="add_picture">
+                <div class="main_picture"></div>
+                <ul class="productlisting">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="add_details">
+                <div class="detail_section">
+                  <div class="detail_left"><span>Posted on:</span><?php echo date("M d, Y") ?></div>
+                  <div class="add_rate">$<span class="ad_prev_price"></span></div>
+                </div>
+                <div class="detail_section">
+                  <div class="detail_left"><span>Link URL:</span> <a href="#" class="purplecolor">http://ozthink.com/classified/</a></div>
+                  <div class="detail_right"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/mail_icon.jpg" width="16" height="12" alt="" /></div>
+                </div>
+                <div class="detail_section"><span>Share On:</span> <a href="#"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/tweet_btn.jpg" alt="" width="54" height="20" align="absmiddle" /></a>&nbsp;&nbsp;<a href="#"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/pinit_button.jpg" alt="" width="43" height="20" align="absmiddle" /></a>&nbsp;&nbsp;<a href="#"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/googleplus_button.jpg" alt="" width="32" height="20" align="absmiddle" /></a>&nbsp;&nbsp;<a href="#"><img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/facebooklike_button.jpg" alt="" width="54" height="20" align="absmiddle" /></a></div>
+                <div class="detail_section"><span>Details:</span>
+                  <label><span class="ad_prev_desc"></span> </label>
+                </div>
+                <div class="detail_section"><span>Keyword:</span> <span class="ad_prev_keyowrd"></span></div>
+                <div class="detail_section"><span>Payment Accepted:</span> Cash, Pay Pal, Visa, Master Card</div>
+                <div class="report"><a href="#" class="purplecolor">Report Abuse</a></div>
+                <div class="message">
+				<span class="button" id="cancel" onClick="window.location.reload();">Cancel</span>
+				<span class="button" id="edit">Edit</span>
+				<span class="button" id="continue">Continue</span>
+				
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<div id="aftercontinue">
+
+</div>
+		
+		
+		<div id="afterpayment">
 
 			<span class="swa">
 			Thanks for making the payment against your Ad post!
@@ -797,16 +925,10 @@ endforeach ;
 <input type="radio" name="vmobnum" id="vmobnum" />Verify Post Using Mobile No.
 <br />
 <input type="radio" name="vemail" id="vemail" />Verify Post Using Email Address
-</fieldset>
 
-
-
-
-
-
-
-
-
+</div>
+		
+<div id="finalverify">		
 <fieldset class="sectionwrap">
 <legend></legend>
 
@@ -834,15 +956,8 @@ Email verification was successful, your post is now <span style="color:#00CC66">
 <br />
 <span class="swa">Login anytime to edit or delete your posts and to manage your account.</span>
 <!------END EMAIL VERIFIED--------->
-
-
-
 </fieldset>
-<input id="PostAd" value="<?php echo $lang["lang_post_form"]["str_post_button"] ?>" class="newButton" onClick="MainFormObj.submit();this.disabled=true; return false;" type="submit">
-
-</form>
-
-				
+</div>		
       </div>
 	<div>
 			<?php

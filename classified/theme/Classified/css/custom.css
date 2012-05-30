@@ -74,3 +74,93 @@ ul.footernav{ width: auto; height: auto; float: right; margin: 0px; padding: 0px
 ul.footernav li{ width: auto; height: auto; float: left; list-style: none; margin: 0px; padding: 0 8px 0 8px; background: url(../images/footer_devider.jpg) left center no-repeat;}
 ul.footernav li:first-child{ background: none;}
 ul.footernav li a{ color: #fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bodysection{ float: left; width: 841px; height: auto; font-size: 12px; margin-bottom: 25px; min-height: 480px;}
+.pageheading{ font-size: 16px; float: left; width: 100%; height: auto; border-top: 1px #e2e2e2 solid; padding: 10px 0 5px 0 ; }
+.pagecontent{ font-size: 12px; float: left; width: 100%; height: auto; }
+
+
+.detailsmain{ width: 823px; height: auto; float: left; border-top: 1px #e2e1e1 solid; padding-top: 10px; font-size: 12px;}
+.detailsmain .leftcontainer { width: 180px; height: auto; float: left; background: #f7f7f7; border: 1px #e2e1e1 solid; padding: 0px;}
+
+.smallsearch{ width: 160px; height: auto; float: left; font-size: 14px; background: #ebf7fe; padding: 10px; padding-bottom: 25px;}
+.searchinput{ width: 153px; float: left; border:  1px solid #B6C4DA; height: 25px; padding-left: 5px; color: #666666; margin-top: 3px; line-height: 25px;}
+
+.categorysection{ width: 160px; height: auto; float: left; padding-top: 15px; font-size: 12px; border-bottom: 1px #E2E1E1 solid; border-top: 1px #E2E1E1 solid; padding-bottom: 15px; margin-left: 10px; }
+.cat_head{ width: 160px; height: auto; float: left; border-bottom: 1px #e2e1e1 solid; padding-bottom: 5px; }
+.cat_head span{ width: 60px; height: auto; float: right; text-align: right; font-size: 11px;}
+
+ul.categorylist{ width: 160px; height: auto; float: left; margin: 0px; padding: 0px; margin-top: 10px;}
+ul.categorylist li{ width: 150px; height: auto; float: left; list-style: none; margin: 0px; padding: 0px; color: #333; background: url(../images/arrow.jpg) no-repeat top left; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;}
+ul.categorylist li ul{ float: left; width: 150px; height:auto; margin: 0px; padding: 0px; margin-top: 5px;}
+ul.categorylist li ul li{ float: left; width: 150px; height:auto; margin: 0px; padding: 0px; background: none; font-size: 11px; color: #666; padding-bottom: 2px;}
+
+.locationsection{ width: 160px; height: auto; float: left; padding-top: 15px; font-size: 12px; padding-bottom: 15px; margin-left: 10px; }
+.location_head{ width: 160px; height: auto; float: left; border-bottom: 1px #e2e1e1 solid; padding-bottom: 5px; margin-bottom: 10px; }
+.location_head span{ width: 60px; height: auto; float: right; text-align: right;}
+
+.locate_dropdown{ width: 160px; height: auto; float: left; border:  1px solid #B6C4DA; height: 20px; margin-bottom: 5px; color: #666666; font-size: 11px; }
+.cityinput{ width: 153px; border:  1px solid #B6C4DA; height: 20px; margin-bottom: 5px; color: #666666; font-size: 11px; padding-left: 5px; line-height: 20px; }
+.go_button{ background: #49a5df; color: #fff; font-size: 12px; cursor: pointer; padding: 5px 10px; float: right;}
+
+.detailsmain .maincontentsection{ width: 622px; height: auto; float: left; padding-left: 19px;}
+.searchresult{ width: 622px; height: auto; float:left; border-bottom: 1px #e2e1e1 solid; padding: 10px 0 10px 0;}
+.searchresult span{ color: #333; font-size: 12px; float: left; padding-left: 5px; }
+
+ul.resultlist{ width: 450px; height: auto; float: left; margin: 0px; padding: 0px; }
+ul.resultlist li{ width: auto; height: auto; float: left; list-style: none; margin: 0px; padding: 0px; color:#666; font-size: 11px; margin-left: 10px;}
+
+.backbutton{ width: 35px; height: auto; float: right; padding-right: 5px; text-align: right; background: url(../images/back_arrow.jpg) no-repeat top left;}
+
+.addcontainer{ width: 622px; height: auto; float: left; padding-top: 10px;}
+.add_head{ width: 617px; height: auto; float: left; color: #642c8e; font-size: 16px; padding-bottom: 10px; padding-left: 5px;}
+
+.add_picture{ width: 250px; height: auto; float: left;}
+.main_picture{ width: 250px; height: 250px; float: left; background: #e2e1e1;}
+
+ul.productlisting{ width: 263px; height: auto; float: left; margin: 0px; padding: 0px; }
+ul.productlisting li{ width: 75px; height: 75px; float: left; list-style: none; margin: 0px; padding: 0px; background: #e2e1e1; margin-right: 12px; margin-top: 10px;}
+
+.add_details{ width: 354px; height: auto; float: right;}
+.detail_section{ width: 354px; height: auto; float: left; border-bottom: 1px #e2e1e1 solid; padding: 8px 0; font-size: 11px; color: #333;}
+.report{ width: 350px; height: auto; float: left; padding: 8px 0; font-size: 11px; color: #333; text-align: right; padding-right: 4px;}
+.message{ width: 350px; height: auto; float: left; color: #ababab; font-size: 11px; padding-top: 50px;}
+.detail_section span{ color: #666; font-size: 12px; padding-right: 5px;}
+.detail_section label{ color: #333; font-size: 11px; width: 302px; height: auto; float: right;}
+.detail_left{ width: 270px; height:auto; float: left; color: #333;}
+.detail_left span{ color: #666; font-size: 12px; padding-right: 5px;}
+.detail_right{ width: 50px; height:auto; float: right; text-align: right; padding-right: 5px;}
+.add_rate{ width: 75px; height:auto; float: right; text-align: right; font-size: 14px; color: #642c8e; padding-right: 5px;}
+
+
+.listingtop{ width: 622px; height: auto; float: left; padding: 10px 0 0px 0;}
+.listingtop .leftlisting{ width: 150px; height: auto; float: left; padding: 0; padding-left: 5px;}
+.listingtop .sortby{ width: 400px; height: auto; float: right; padding: 0; text-align: right; padding-right: 5px; font-size: 11px;}
+
+.listingmain{ width: 622px; height: auto; float: left; padding: 10px 0; border-bottom: 1px #e2e1e1 solid;}
+.listingmain .img{ width: 100px; height: 100px; float: left; padding: 0; background: #e2e1e1; margin-left: 5px; margin-right: 10px; }
+.listingmain .productdetail{ width: 335px; height: auto; float: left; padding: 0; }
+.listingmain .productdetail .name{ width: 335px; height: auto; float: left; padding: 0; font-size: 12px; color: #642c8e; padding-bottom: 15px; }
+.listingmain .productdetail .state{ width: 335px; height: auto; float: left; padding: 0; color: #333; font-size: 11px; }
+.listingmain .productdetail .state span{ color: #666; font-size: 12px; }
+.listingmain .productdetail .keyword{ width: 335px; height: auto; float: left; padding: 0; color: #333; font-size: 11px;  }
+.listingmain .productdetail .keyword span{ color: #666; font-size: 12px; }
+
+.listingmain .pricedetails{ width: 150px; height: auto; float: right; padding: 0; text-align: right; padding-right: 5px; }
+.listingmain .pricedetails .price{ width: 135px; height: auto; float: right; padding: 0; text-align: right; color: #642C8E; font-size: 14px; padding-bottom: 15px;}
+.listingmain .pricedetails .posted{ width: 150px; height: auto; float: right; padding: 0; text-align: right; font-size: 11px; }
+.listingmain .pricedetails .posted span{ color: #666; }
+
+.loading{ width: 622px; height: auto; float: left; margin: 10px 0; padding: 5px 0; text-align: center; background: #f4fbff;}

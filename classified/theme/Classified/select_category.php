@@ -1052,7 +1052,7 @@ endforeach ;
 <h3>Order Summary</h3>
 <ul>
 <li>
-<label>Location Selected:</label>
+<!---<label>Location Selected:</label>-->
 <div></div>
 </li>
 <li>
@@ -1060,13 +1060,15 @@ endforeach ;
 <div><span class="ad_prev_category"></span></div>
 </li>
 <li>
-<label>Sub Category Selected: </label>
+<!--<label>Sub Category Selected: </label>-->
 <div><span class="ad_prev_subcategory"></span>
 </div>
 </li>
 </ul>
 </div>
+<div style="float:left; margin-left:-230px;">
 <input id="PostAd" value="<?php echo $lang["lang_post_form"]["str_post_button"] ?>" class="button" onClick="MainFormObj.submit();this.disabled=true; return false;" type="submit">
+</div>
 </div>
 <!------aftercontinue--------->	
 

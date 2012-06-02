@@ -13,62 +13,12 @@ $("#aftercontinue").hide();
 $("#afterpayment").hide();
 $("#finalverify").hide();
   $("#preview").click(function() {
-  
-  
   var adtitletoshow1 = $("#form_post_ad").serialize();
    //$("#previewadtitle").text(adtitletoshow);
-   //alert(adtitletoshow1);
-   //var subgh = $('#form_post_ad :input[name="subcategory"]').val();
- //  alert(subgh);
-   /****************BLOCK CODE STARTS HERE FOR VALIDATION************************/
-   
-   
-   var adtitle = $('#form_post_ad :input[name="adtitle"]').val();
-   var adprice = $('#form_post_ad :input[name="price"]').val();
-   var addesc =  $('#form_post_ad :input[name="addesc"]').val();
-   var keyword = $('#form_post_ad :input[name="keyword"]').val();
-   
-	if ( adtitle === 'Enter Ad Title' || adtitle ==='' )
-	{
-	alert("Please enter a suitable title for your Ad listing");
-	return false;
-	}
-	
-	if( isNaN( adprice ) )
-	{
-	alert("Please enter a Price for your Ad listing");
-	return false;
-	}
-    
-	if ( addesc === 'Enter Ad description upto 200 characters' || addesc ==='' )
-	{
-	alert("Check ad Description");
-	return false;
-	}
-	
-	if( addesc.length < 30 )
-	{
-	alert("Description cannot be less than 30 characters");
-	return false;	
-	}
-	
-	if ( keyword === 'Keyword 1, Keyword 2, Keyword 3' || keyword ==='' )
-	{
-	alert("Add multiple words separated by Comma.");
-	return false;
-	}   
-   
-   
-   
-   /*****************BLOCK CODE ENDS HERE***********************/
    
    var adtitletoshow = $("#form_post_ad").serializeArray();
-
   // alert(adtitletoshow);
    $.each(adtitletoshow, function(i, field){
-
-
-   
    if( field.name == 'adtitle'){
    $(".add_head").text(field.value);
   // alert(field.value);
@@ -84,37 +34,27 @@ $("#finalverify").hide();
   // alert(field.value);
     }
 	
-	if( field.name == 'price'){
+		   if( field.name == 'price'){
    $(".ad_prev_price").text(field.value);
   // alert(field.value);
     }
-
-	if( field.name == 'category'){
 	
-   	$(".ad_prev_category").text(field.value);
-	
-    }	
-
-	if( field.name == 'subcategory'){
-   	//alert(field.value);
-	$(".ad_prev_subcategory").append(field.value + " ");
-	
-    }	
-	
-	});
+});
 
    
-  $("#continue").click(function(){
+     $("#continue").click(function(){
   $("#inline_content").hide();
   $("#aftercontinue").show();
 //alert(adtitletoshow1);
   
   var formdata3 = $('#form_post_ad :input[name="category"]').val();
   $("#aftercontinue").val(formdata3);
+
+    
   });
    
    
-    $("#divform").hide();
+    $("#form_post_ad").hide();
 	$(".detailsmain").show();
   });
   
@@ -312,140 +252,20 @@ req.send(null);
 }
 
 
-/****Added from my current file******/
-
-
-function showDisclaimer( discselect )
-{
-/***
-if( discselect == 1)
-{
-document.getElementsByClassName("catlink")[0].innerHTML =  '<a href="<?php echo base_url ?>pdfserver.php?file=Musicians">Click To Download Disclaimer For this category</a>';
-}
-
-if( discselect == 5)
-{
-
-document.getElementsByClassName("catlink")[0].innerHTML =  '<a href="<?php echo base_url ?>pdfserver.php?file=Services">Click To Download Disclaimer For this category</a>';
-}
-
-if( discselect == 22)
-{
-document.getElementsByClassName("catlink")[0].innerHTML =  '<a href="<?php echo base_url ?>pdfserver.php?file=Rentals">Click To Download Disclaimer For this category</a>';
-}
-*****/
-
-
-switch ( discselect )
-{
-case '1':
-document.getElementsByClassName("catlink")[0].innerHTML =  '<a href="<?php echo base_url ?>pdfserver.php?file=Musicians">Click To Download Disclaimer For this category</a>';
-break;
-case '5':
-document.getElementsByClassName("catlink")[0].innerHTML =  '<a href="<?php echo base_url ?>pdfserver.php?file=Musicians">Click To Download Disclaimer For this category</a>';
-break;
-case '22':
-document.getElementsByClassName("catlink")[0].innerHTML =  '<a href="<?php echo base_url ?>pdfserver.php?file=Musicians">Click To Download Disclaimer For this category</a>';
-break;
-default:
-//alert(discselect);
-document.getElementsByClassName("catlink")[0].innerHTML = '';
-}
-
-}
-
-
-
-
-
-
-
-
 
 </script>
 
 <script language="javascript">
 var total_images = 1 ;
-var num =1;
-function add_file( )
+function add_file_field ( )
 {
-
 total_images++ ;
 if ( total_images > 6 )
 return ;
-var str_to_embed = '<input name="fileImage[]" size="40" style="width: 500px;" type="file" onChange="add_file_fieldtrue(this, num);add_file()"><br>' ;
+var str_to_embed = '<input name="fileImage[]" size="40" style="width: 500px;" type="file" onChange="add_file_field()"><br>' ;
 $("#image_stack").append ( str_to_embed ) ;
-num++;
-}
-
-function add_file_field(input) 
-{
-	if (input.files && input.files[0]) {
-	var reader = new FileReader();
-	reader.onload = function(e) {
-	$('#preview_img').attr('src', e.target.result)
-	.width('248px')
-	.height('248px');
-	}
-	reader.readAsDataURL(input.files[0]);
-	}
-}
-
-function add_file_fieldtrue(input,num) 
-{
-var ttt = num-1;
-	if (input.files && input.files[0]) {
-	var reader = new FileReader();
-	reader.onload = function(e) {
-	$('#preview_img'+ttt).attr('src', e.target.result)
-	.width('70px')
-	.height('70px');
-	}
-	reader.readAsDataURL(input.files[0]);
-	}
 }
 </script>
-
-<style type="text/css">
-.swa{
-font-size:12px;
-}
-div.work_main{overflow:hidden;}
-div.work_status{float:left;margin:0 5px 0 0;}
-fieldset.sectionwrap{width:550px;}
-ul li {margin:0 0 10px 0;}
-legend{display:block;padding:0 0 10px 0;clear:both;}
-ul li label{display:block;float:left;width:100px;}
-li.email_inq input{float:left;margin:0 10px 0 0;}
-li.email_inq label{float:left;width:432px;}
-li.email_inq div{clear:both;float:none;margin:0 0 10px 0;overflow: hidden;padding: 0 0 8px;}
-#div_attraction{overflow:hidden;margin:0 0 10px 0;}
-#div_attraction div{float:left;width:170px;}
-#div_attraction input.input_check{float:left;margin:0 5px 0 0;}
-#div_attraction label{display:block;float:left;width:150px;}
-div.showdiv{}
-div.showdiv ul{list-style:none;margin:0;padding:0 0 0 25px;}
-div.showdiv ul li {overflow:hidden;}
-div.showdiv ul li label{display:block;float:left;width:120px}
-div.message .button{float:left;}
-div.message #cancel{margin:0 159px 0 0;}
-
-div.aftercontinue_container{background:#eee;padding:25px 40px;width:525px;margin:10px auto;}
-div.aftercontinue_container h3{font-size: 16px;font-weight: bold;margin:5px 0px 10px 0;}
-div.aftercontinue_container h4{font-size:14px;margin:7px 0;padding:0;}
-div.aftercontinue_container ul{list-style:none;margin:0;padding:0;}
-div.aftercontinue_container ul li{list-style:none;margin:0 0 5px 0;padding:0;overflow:hidden;}
-div.aftercontinue_container ul li label{float:left;display:block;width:410px;}
-div.aftercontinue_container ul li div{font-weight:bold;}
-input#PostAd{margin:0 0 0 635px;}
-span#div_city {overflow:hidden;margin:0 0 10px 0;display:block;}
-span#div_city div{float:left;width:170px;}
-span#div_city div input.input_check{float:left;margin:0 5px 0 0;}
-span#div_city div label{display:block;float:left;width:150px;}
-
-</style>
-
-
 
 </head>
 <body>
@@ -464,16 +284,28 @@ span#div_city div label{display:block;float:left;width:150px;}
         <h1>Place an Ad</h1>
 	
 	
-<form action="" method="post" name="go_tohead" id="form_post_ad" enctype="multipart/form-data" onSubmit="return validateForm('form_post_ad');">	
-
-<input type="hidden" name="themeVal" value="1" />	
+	
+<form action="" method="post" name="go_tohead" id="form_post_ad" enctype="multipart/form-data" onSubmit="return validateForm('form_post_ad');">
+									
+									
+				<input type="hidden" name="themeVal" value="1" />	
+				
+				
 <input name="Email_post_Address" value="<?php echo $_SESSION["login_member_email"] ?>"  type="hidden" />
+				
+								
 								<!--------THIS BLOCK OF CODE ADDED TO INTRODUCE TEXTAREA VISIBILITY----------->	
 
-<div id="divform">								<!-------BLOCK CODE ENDS HERE--------------->
+
+		
+							
+								<!-------BLOCK CODE ENDS HERE--------------->
+									
+
 <fieldset class="sectionwrap">
 <legend></legend>
-<select class="catName" name="category" id="category" onChange="showSelected(this.value);showSubcategory();showdiv(this.value);showDisclaimer(this.value);" >
+
+									<select name="category" id="category" onChange="showSelected(this.value);showSubcategory();showdiv(this.value);" >
 									<option value="">Select Ad Category</option>
 									
 									<?php
@@ -481,7 +313,7 @@ span#div_city div label{display:block;float:left;width:150px;}
 										if ( ! empty ( $mainCategory ) )
 										foreach ( $mainCategory as $cat ) :
 									?>	
-										<option id="categoryname" value="<?php echo $cat["CategoryID"] ?>"><?php echo $cat["CategoryName"] ?></option>
+										<option value="<?php echo $cat["CategoryID"] ?>"><?php echo $cat["CategoryName"] ?></option>
 									<?php	
 										endforeach ;
 									
@@ -510,7 +342,7 @@ span#div_city div label{display:block;float:left;width:150px;}
 <legend>Category Disclaimer</legend>
 <textarea cols="90" rows="5" disabled="disabled" id="textarea" class="abhishek" name="catdiscontent"></textarea>
 </fieldset>
-<span class="catlink"></span>
+<a href="#"><span style="font-size: 11px; text-decoration:underline;">Click To Download Disclaimer For this category</span></a>
 <br />
 <br />
 
@@ -527,7 +359,7 @@ span#div_city div label{display:block;float:left;width:150px;}
 <br /><br /><br />
 
 
-<textarea rows="5" cols="94" name="addesc" id="addesc" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value='Enter Ad description upto 200 characters';" onKeyDown="textCounter(document.go_tohead.addesc,document.go_tohead.remLen2,200)"
+<textarea rows="5" cols="94" name="addesc" id="addesc" onfocus="this.value='';" onblur="if(this.value=='')this.value='Enter Ad description upto 200 characters';" onKeyDown="textCounter(document.go_tohead.addesc,document.go_tohead.remLen2,200)"
 onKeyUp="textCounter(document.go_tohead.addesc,document.go_tohead.remLen2,200)"  >Enter Ad description upto 200 characters</textarea><br />
 <input readonly type="text" name="remLen2" size="3" maxlength="3" value="200">
 <span class="swa">characters left</span>
@@ -541,6 +373,30 @@ onKeyUp="textCounter(document.go_tohead.addesc,document.go_tohead.remLen2,200)" 
 
 <!-----WORK of 23-05-2012 CODE BLOCK STARTS HERE - 23/5/2012- -1- -------->
 
+<style type="text/css">
+.swa{
+font-size:12px;
+}
+div.work_main{overflow:hidden;}
+div.work_status{float:left;margin:0 5px 0 0;}
+fieldset.sectionwrap{width:550px;}
+ul li {margin:0 0 10px 0;}
+legend{display:block;padding:0 0 10px 0;clear:both;}
+ul li label{display:block;float:left;width:100px;}
+li.email_inq input{float:left;margin:0 10px 0 0;}
+li.email_inq label{float:left;width:432px;}
+li.email_inq div{clear:both;float:none;margin:0 0 10px 0;overflow: hidden;padding: 0 0 8px;}
+#div_attraction{overflow:hidden;margin:0 0 10px 0;}
+#div_attraction div{float:left;width:170px;}
+#div_attraction input.input_check{float:left;margin:0 5px 0 0;}
+#div_attraction label{display:block;float:left;width:150px;}
+div.showdiv{}
+div.showdiv ul{list-style:none;margin:0;padding:0;}
+div.showdiv ul li {overflow:hidden;}
+div.showdiv ul li label{display:block;float:left;width:120px}
+div.message .button{float:left;}
+div.message #cancel{margin:0 159px 0 0;}
+</style>
 
 <img src="<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/images/attachment.png" />
 <span class="swa">Add Attachments</span>
@@ -560,7 +416,7 @@ onKeyUp="textCounter(document.go_tohead.addesc,document.go_tohead.remLen2,200)" 
 <div class="first-input">
 <div class="upload-action">
 <div id="image_stack">
-<input name="fileImage[]" size="40" style="width: 500px;" type="file" onChange="add_file_field(this);add_file();">
+<input name="fileImage[]" size="40" style="width: 500px;" type="file" onChange="add_file_field()">
 
 <br>
 </div>
@@ -582,28 +438,21 @@ onKeyUp="textCounter(document.go_tohead.addesc,document.go_tohead.remLen2,200)" 
 
 
 <div id="showdiv16" class="showdiv" style="display:none;">
-<ul>
-<li>
 <label>Salary/Wages :</label> <input name="salary" id="salary" type="text" size="30" />
-</li>
-<li>
+
+
 <label>Education :</label> <input name="education" id="education" type="text" size="30" />
-</li>
-<li>
+
 <label>Work Status :</label> 
-</li>
-<li>
 <div class="work_main">
 <div class="work_status"><input type="checkbox" name="fulltime" id="fulltime" /> FullTime</div>
 <div class="work_status"><input type="checkbox" name="parttime" id="parttime" /> PartTime</div>
 <div class="work_status"><input type="checkbox" name="tempcont" id="tempcont" /> Temp, Contract</div>
 <div class="work_status"><input type="checkbox" name="intern" id="intern" /> Internship</div>
 </div>
-</li>
-<li>
+
 <label>Shift :</label> <input name="zipcode" id="zipcode" type="text" size="30" />
-</li>
-</ul>
+
 </div>
 
 
@@ -753,36 +602,34 @@ for ($i=1; $i <= 8; $i++)
 </ul>
 </div>
 
-<div id="showdiv107" class="showdiv" style="display:none;">
-<ul>
-<li>
+<div id="showdiv107" style="display:none;">
+
 <label>Your Age :</label> <input name="age" id="age" type="text" size="30" />
-</li>
 
 
-<li>
+
 <label>Review TER ID :</label> 
 <div class="work_main">
 <div class="work_status"><input type="checkbox" name="bigdog" id="bigdog" /> Big Doggie</div>
 <div class="work_status"><input type="checkbox" name="erotic" id="erotic" /> Erotic MP</div>
 <div class="work_status"><input type="checkbox" name="tandab" id="tandab" /> T&A Board Display</div>
 </div>
-</li>
 
 
-<li>
+
 <label>Review IDNum :</label> <input name="reviewidnum" id="reviewidnum" type="text" size="30" />
-</li>
 
-<li>
+
+
+
 <label>Credit cards :</label> 
 <div class="work_main">
 <div class="work_status"><input type="checkbox" name="visa" id="owner" /> Visa</div>
 <div class="work_status"><input type="checkbox" name="mastercard" id="mastercard" /> Master Card</div>
 <div class="work_status"><input type="checkbox" name="amexp" id="amexp" /> American Express</div>
 </div>
-</li>
-</ul>
+
+
 
 </div>
 
@@ -869,6 +716,8 @@ $conShortcode = $data->select ( "Country" , "CountryName, CountryID, Abbr" ,  " 
 <input type="checkbox" name="displayad" value="1"  onClick="this.value = this.checked ? 1 : 0;" checked="checked" />&nbsp;<span class="swa">Display my no. in Ad post</span>
 
 
+<br />
+<br />
 
 <legend>Where would you like your ad to be seen ?</legend>
 
@@ -922,7 +771,8 @@ endforeach ;
 
 				</span>						
 				
-
+			<br />
+			<br />
  			<legend>Place in multiple categories</legend>
 			<!-----------------------------------------------------------------------------
 			<input type="checkbox" id="subcat1" name="subcat1" /> Sub Category 1 	&nbsp;			
@@ -962,14 +812,14 @@ endforeach ;
 			Ad Keyword : &nbsp;&nbsp;
 			</span>
 			<br />
-			<input type="text" name="keyword" id="keyword" size="40" value="Keyword 1, Keyword 2, Keyword 3" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+			<input type="text" name="keyword" id="keyword" size="40" value="Keyword 1, Keyword 2, Keyword 3 " onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
 			
 
 <!------------------ BLOCK CODE ENDS HERE ##1 ENDS HERE ---------------------->
 
 
 
-<span class="button" id="preview">Preview Ad</span>
+<span class="button" id="preview">Preview</span>
 <span class="button" id="cancel" onClick="window.location.reload()">Cancel</span>
 
 
@@ -995,9 +845,23 @@ endforeach ;
 
 
 </fieldset>
-</div>
 
-<!------detailsmain--------->
+
+
+
+
+
+
+
+
+
+
+
+
+<input id="PostAd" value="<?php echo $lang["lang_post_form"]["str_post_button"] ?>" class="newButton" onClick="MainFormObj.submit();this.disabled=true; return false;" type="submit">
+
+</form>
+
 <div class="detailsmain">
           <div class="maincontentsection">
             <div class="addcontainer" id='inline_content' style="padding:0 178px 5px 5px; border:1px solid #E2E1E1;">
@@ -1005,14 +869,14 @@ endforeach ;
 				<!----PLACE FOR AD TITLE------>
 			  </div>
               <div class="add_picture">
-                <div class="main_picture"><img id="preview_img" style="width:75px; height:75px;" /></div>
-                <ul class="productlisting">	
-                  <li><img id="preview_img1" style="width:75px; height:75px;" /></li>
-                  <li><img id="preview_img2" style="width:75px; height:75px;" /></li>
-                  <li><img id="preview_img3" style="width:75px; height:75px;" /></li>
-                  <li><img id="preview_img4" style="width:75px; height:75px;" /></li>
-                  <li><img id="preview_img5" style="width:75px; height:75px;" /></li>
-				  <li></li>
+                <div class="main_picture"></div>
+                <ul class="productlisting">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
                 </ul>
               </div>
               <div class="add_details">
@@ -1029,8 +893,6 @@ endforeach ;
                   <label><span class="ad_prev_desc"></span> </label>
                 </div>
                 <div class="detail_section"><span>Keyword:</span> <span class="ad_prev_keyowrd"></span></div>
-				
-		
                 <div class="detail_section"><span>Payment Accepted:</span> Cash, Pay Pal, Visa, Master Card</div>
                 <div class="report"><a href="#" class="purplecolor">Report Abuse</a></div>
                 <div class="message">
@@ -1043,37 +905,13 @@ endforeach ;
             </div>
           </div>
         </div>
-<!------detailsmain--------->
 
-<!------aftercontinue--------->
+
 <div id="aftercontinue">
 
-<div class="aftercontinue_container">
-<h3>Order Summary</h3>
-<ul>
-<li>
-<label>Location Selected:</label>
-<div></div>
-</li>
-<li>
-<label>Category Selected: </label>
-<div><span class="ad_prev_category"></span></div>
-</li>
-<li>
-<label>Sub Category Selected: </label>
-<div><span class="ad_prev_subcategory"></span>
 </div>
-</li>
-</ul>
-</div>
-<input id="PostAd" value="<?php echo $lang["lang_post_form"]["str_post_button"] ?>" class="button" onClick="MainFormObj.submit();this.disabled=true; return false;" type="submit">
-</div>
-<!------aftercontinue--------->	
-
-
-
-</form>	
-	
+		
+		
 		<div id="afterpayment">
 
 			<span class="swa">
@@ -1121,9 +959,6 @@ Email verification was successful, your post is now <span style="color:#00CC66">
 </fieldset>
 </div>		
       </div>
-<!------left Section--------->	  
-	  
-	  
 	<div>
 			<?php
 				

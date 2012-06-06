@@ -44,6 +44,9 @@
 				$postdata["adtitle"] = $_POST["adtitle"] ;
 				
 				/**/
+				$postdata["name"] = $_POST['name'];
+				$postdata["phone"] = $_POST['phone'];
+				$postdata["compname"] = $_POST['compname'];
 				$postdata["displayNumInPost"] = $_POST['displayad'];
 				$postdata["publishtime"] = $_POST['adpublish'];
 				$postdata["maincatchoice"] = $_POST["category"] ;

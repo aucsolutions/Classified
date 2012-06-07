@@ -142,7 +142,14 @@ $(document).ready(function() {
     $("#divform").hide();
 	$(".detailsmain").show();
   });
-     
+    
+
+	$("#div_state").change(function(){
+	alert("I am in div_state");
+    var mystate = $("#statelist").val();
+	showCities( mystate );
+	});
+	 
 });
 </script>
 
@@ -212,27 +219,17 @@ function showSelected( sapna )
 {
 
 var num = sapna.length;
+var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/catdisccontent.php';
+$.ajax({
+type: "GET",
+url: url,
+data:{'catid':sapna},
+success:function(results)
+{	
+	$('#loadcatcon').html(results);
+}
+});
 
-
-//For Category Disclaimer Content/////
-var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/catdisccontent.php?catid='+sapna;
-//alert(url);
-var req = getXMLHTTP();
-if(req){
-//alert(req.statusText);
-req.onreadystatechange = function(){
-if(req.status == 200){
-document.getElementById('textarea').innerHTML = req.responseText;
-}
-else
-{
-alert("there was a problem while using XMLHTTP:\n" + req.statusText);
-}
-}
-}
-req.open("GET", url, true);
-req.send(null);
-//////////////////////////////////////
 
 if(num != 0)
 {
@@ -261,24 +258,17 @@ return false;
 
 function showSubcategory( )
 {
-	var value = document.getElementById('category').value;
-var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/subcategorylist.php?category='+value;
-//alert(url);
-var req = getXMLHTTP();
-if(req){
-//alert(url);
-req.onreadystatechange = function(){
-if(req.status == 200){
-document.getElementById('div_attraction').innerHTML = req.responseText;
+var value = document.getElementById('category').value;
+var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/subcategorylist.php';
+ $.ajax({
+type: "GET",
+url: url,
+data:{'category':value},
+success:function(results)
+{	
+	$('#div_attraction').html(results);
 }
-else
-{
-alert("there was a problem while using XMLHTTP:\n" + req.statusText);
-}
-}
-}
-req.open("GET", url, true);
-req.send(null);
+});
 }
 
 function pricecheck( myval )
@@ -316,49 +306,34 @@ return false;
 
 function showState( )
 {
-	var value = document.getElementById('country').value;
-var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/showstate.php?country='+value;
-//alert(url);
-var req = getXMLHTTP();
-if(req){
-//alert(url);
-req.onreadystatechange = function(){
-if(req.status == 200){
-document.getElementById('div_state').innerHTML = req.responseText;
+var value = document.getElementById('country').value;
+var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/showstate.php';
+$.ajax({
+type: "GET",
+url: url,
+data:{'country':value},
+success:function(results)
+{	
+	$('#div_state').html(results);
 }
-else
-{
-alert("there was a problem while using XMLHTTP:\n" + req.statusText);
-}
-}
-}
-req.open("GET", url, true);
-req.send(null);
+});
 }
 
 
 
 function showCities( stateval )
 {
-	//var value = document.getElementById('country').value;
-var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/showcity.php?state='+stateval;
-//alert(url);
-var req = getXMLHTTP();
-if(req){
-//alert(url);
-req.onreadystatechange = function(){
-if(req.status == 200){
-document.getElementById('div_city').innerHTML = "<legend>Place in multiple cities</legend>";
-document.getElementById('div_city').innerHTML += req.responseText;
+var url = '<?php echo base_url ?>theme/<?php echo $app_init_data["CurrentSkin"] ?>/showcity.php';
+$.ajax({
+type: "GET",
+url: url,
+data:{'state':stateval},
+success:function(results)
+{	
+	document.getElementById('div_city').innerHTML = "<legend>Place in multiple cities</legend>";
+	document.getElementById('div_city').innerHTML += results;
 }
-else
-{
-alert("there was a problem while using XMLHTTP:\n" + req.statusText);
-}
-}
-}
-req.open("GET", url, true);
-req.send(null);
+});
 }
 
 
@@ -555,7 +530,8 @@ div.payment_proccess ul li input.chose_method{margin:0 12px;}
 <span class="catdisplay" id="catdisplay" style="display:none;">
 <fieldset class="swapnesh">
 <legend>Category Disclaimer</legend>
-<textarea cols="90" rows="5" disabled="disabled" id="textarea" class="abhishek" name="catdiscontent"></textarea>
+<!--<textarea cols="90" rows="5" disabled="disabled" id="textarea" class="abhishek" name="catdiscontent"></textarea>-->
+<div id="loadcatcon" style="background:#F0F0F0;"></div>
 </fieldset>
 <span class="catlink" style="text-decoration:underline;"></span>
 </span>
@@ -1219,6 +1195,43 @@ endforeach ;
 </ul>
 </div>
 <!----  END  ---->
+
+
+<!------------PAYPAL FIELDS------------------>
+
+
+<!-----------------------------------
+
+<input type="hidden" name="cmd" value="_xclick" />
+<input type="hidden" name="item_name" value="<?php echo $app_init_data["SiteTitle"] ." Classified Ad Post " ?>" />
+<input type="hidden" name="quantity" value="1" />
+<input type="hidden" name="amount" value="10" />
+<input type="hidden" name="item_number" value="<?php echo $_SESSION["last_ad_id"] ?>" />
+<input type="hidden" name="business" value="<?php echo $app_init_data["PayPalUserName"] ?>" />
+<input type="hidden" name="currency_code" value="<?php echo $app_init_data["PayPalCurrencyCode"] ?>" />
+<input type="hidden" name="custom" value="<?php echo $app_init_data["SiteTitle"] ?> " />
+<input type="hidden" name="lc" value="US" />
+<input type="hidden" name="country" value="SG" />
+<input type="hidden" name="cpp_header_image" value="<?php echo base_url ?>media/logo.jpg" />
+
+<input type="hidden" name="no_shipping" value="1" />
+<input type="hidden" name="no_note" value="0" />
+<input type="hidden" name="return" value="<?php echo base_url ?>c-CategorySelect/<?php echo 5 ?>/pp-Return/" />
+<input type="hidden" name="notify_url" value="<?php echo base_url ?>c-PayClassified/Notify/" />
+<input type="hidden" name="cancel_return" value="<?php echo base_url ?>c-SelectCategory/" />
+
+
+---------------------------------->
+
+
+
+
+<!-------------------------------------------->
+
+
+
+
+
 
 
 <div style="float:left; margin-left:-230px;">
